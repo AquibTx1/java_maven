@@ -987,6 +987,7 @@ public class OptimusInstrumentSteps {
         }
     }
 
+
     @Then("Verify DateTime in Search Results of Existing Token Prices")
     public void verifyDateTimeInSearchResultsOfExistingTokenPrices() {
         if (BaseStepDefinitions.checkSkipExecutionFlags()) {
@@ -1032,6 +1033,157 @@ public class OptimusInstrumentSteps {
         } else {
             try {
                 OptimusInstrumentActions.verifyDownloadCSVBtn();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click the Fiat Price Side Tab Under Instrument")
+    public void clickTheFiatPriceSideTabUnderInstrument() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.clickInstrument_FiatPrices_SideTab();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+    @And("Click the Alert Price Side Tab Under Instrument")
+    public void clickTheAlertPriceSideTabUnderInstrument() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.clickInstrument_PriceAlert_SideTab();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click to open Arbitrage Sub tab")
+    public void clickToOpenArbitrageSubTab() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.clickInstrument_PriceAlert_Arbitrage_tab();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Switch to Auto mode for Arbitrage tab")
+    public void switchToAutoModeForArbitrageTab() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.instrument_PriceAlert_AutoManual_SwitchToAuto();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @Then("Verify List Switched {string} Mode")
+    public void verifyListSwitchedMode(String mode) {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                Assert.assertEquals(OptimusInstrumentActions.get_Instrument_ArbitragePriceAlert_SwitchValue(), mode);
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Switch to {string} Mode for Arbitrage tab")
+    public void switchToModeForArbitrageTab(String switchTo) {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.instrument_PriceAlert_AutoManual_SwitchToManual(switchTo);
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click Update Now button on Arbitrage tab")
+    public void clickUpdateNowButtonOnArbitrageTab() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_Instrument_PriceAlert_UpdateNow();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @Then("Verify Update Now button is clicked")
+    public void verifyUpdateNowButtonIsClicked() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.check_Instrument_PriceAlert_UpdateNow_State();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();

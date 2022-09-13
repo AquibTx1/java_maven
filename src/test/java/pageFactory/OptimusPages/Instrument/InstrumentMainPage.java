@@ -102,9 +102,9 @@ public class InstrumentMainPage {
     public static By instrument_PriceAlert_SideTab = By.xpath("//ul/li/span/a[contains(text(),'Price Alert')]");
     public static By instrument_PriceAlert_Arbitrage_tab = By.xpath("//div[@class='ant-tabs-nav-list']/div[1]/div[contains(text(),'Arbitrage')]");
     public static By instrument_PriceAlert_AutoManual_Switch = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[1]/button[@role='switch']/span");
-    public static By instrument_PriceAlert_UpdateNow = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[2]/button/span");
+    public static By instrument_PriceAlert_UpdateNow = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[2]/button/span[contains(text(),'Update Now')]");
     public static By instrument_PriceAlert_ArbitrageThresholds = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[3]/button/span");
-
+    public static By instrument_PriceAlert_ArbitrageThresholds_Modal = By.cssSelector(".ant-modal-content > div.ant-modal-header");
     public static By instrument_PriceAlert_Price = By.xpath("//div[@class='ant-tabs-nav-list']/div[2]/div[contains(text(),'Price')]");
     public static By instrumentPriceAlert_Price_Create = By.xpath("//div[@class='ant-tabs-content-holder']/div[1]/div[2]/button[@type='button']/span[contains(text(),'Create')]");
     public static By instrumentPriceAlert_Price_SearchBox = By.xpath("//input[@id='filterForm_search']");

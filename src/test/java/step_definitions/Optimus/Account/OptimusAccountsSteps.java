@@ -1007,22 +1007,4 @@ public class OptimusAccountsSteps {
         }
     }
 
-    @And("Click the Fiat Price Side Tab Under Instrument")
-    public void clickTheFiatPriceSideTabUnderInstrument() {
-        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
-            BaseStepDefinitions.skipThisStep();
-        } else {
-            try {
-                OptimusInstrumentActions.clickInstrument_FiatPrices_SideTab();
-            } catch (Throwable e) {
-                GlobalUtil.e = e;
-                GlobalUtil.errorMsg = e.getMessage();
-                Assert.fail(e.getMessage());
-            }
-            //increase the step counter by 1
-            if (BaseStepDefinitions.getSITflag()) {
-                BaseStepDefinitions.increaseCounter();
-            }
-        }
-    }
 }

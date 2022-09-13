@@ -312,15 +312,15 @@ Feature: Test Instrument feature
       | QA_TestCase_Auto_Optimus_5_4_5 | Instrument |
 
 
-  @OptimusInstrument @debug
+  @OptimusInstrument
   Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from  list of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Click the Fiat Price Side Tab Under Instrument
-    And Select Base from Search Dropdown
-    And Select Quote from Search Dropdown
     And Select Date from Search Dropdown
     And Select Time from Search Dropdown
+    And Select Base from Search Dropdown
+    And Select Quote from Search Dropdown
     Then Verify Base in Search Results of Existing Token Prices
     Then Verify Quote in Search Results of Existing Token Prices
     Then Verify DateTime in Search Results of Existing Token Prices
@@ -330,4 +330,61 @@ Feature: Test Instrument feature
       | TestCaseID                     | SheetName  |
       | QA_TestCase_Auto_Optimus_5_6_1 | Instrument |
       | QA_TestCase_Auto_Optimus_5_6_2 | Instrument |
-      | QA_TestCase_Auto_Optimus_5_6_3 | Instrument |
+
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from  list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Fiat Price Side Tab Under Instrument
+    And Select Date from Search Dropdown
+    And Select Time from Search Dropdown
+    Then Verify DateTime in Search Results of Existing Token Prices
+    Then Verify downloaded CSV Button in Instrument
+
+    Examples:
+      | TestCaseID                     | SheetName  |
+#      | QA_TestCase_Auto_Optimus_5_6_3 | Instrument |
+      | QA_TestCase_Auto_Optimus_5_6_4 | Instrument |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Fiat Price Side Tab Under Instrument
+    And Select Base from Search Dropdown
+    And Select Quote from Search Dropdown
+    Then Verify downloaded CSV Button in Instrument
+
+    Examples:
+      | TestCaseID                     | SheetName  |
+      | QA_TestCase_Auto_Optimus_5_6_5 | Instrument |
+
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Select Auto in Arbitrage section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Arbitrage Sub tab
+    And Switch to "Manual" Mode for Arbitrage tab
+    Then Verify List Switched "Manual" Mode
+    And Switch to "Auto" Mode for Arbitrage tab
+    Then Verify List Switched "Auto" Mode
+
+    Examples:
+      | TestCaseID                       | SheetName  |
+      | QA_TestCase_Auto_Optimus_5_7_1_1 | Instrument |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Select Auto in Arbitrage section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Arbitrage Sub tab
+    And Click Update Now button on Arbitrage tab
+    Then Verify Update Now button is clicked
+
+    Examples:
+      | TestCaseID                       | SheetName  |
+      | QA_TestCase_Auto_Optimus_5_7_1_2 | Instrument |

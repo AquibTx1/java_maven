@@ -475,7 +475,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void clickReload() throws InterruptedException {
         click(InstrumentMainPage.instrumentTokenPrices_Reload_List, "Clicking Reload");
         XAlphaDealEnquiryActions.waitForLoadingIconToAppearAndDisappear();
-        delay(50000);
+        delay(70000);
     }
     public static String get_Base_TokenPriceSearchList() throws InterruptedException {
         delay(3000);
@@ -491,7 +491,8 @@ public class OptimusInstrumentActions  extends KeywordUtil {
         LogUtil.infoLog(thisClass, "Quote Value text contains " +text);
         return text;
     }
-    public static String get_DateTime_TokenPriceSearchList() {
+    public static String get_DateTime_TokenPriceSearchList() throws InterruptedException {
+        clickReload();
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Date_List);
         String text = getElementText(InstrumentMainPage.instrumentTokenPrices_Date_List);
         LogUtil.infoLog(thisClass, "Date time Value text contains " +text);
@@ -508,5 +509,60 @@ public class OptimusInstrumentActions  extends KeywordUtil {
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Base_List);
     }
 
+
+    public static void clickInstrument_PriceAlert_SideTab() throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_SideTab);
+        click(InstrumentMainPage.instrument_PriceAlert_SideTab,"Open Instrument Prices Alert_SideTab");
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+    }
+
+    public static void clickInstrument_PriceAlert_Arbitrage_tab() throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
+        click(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab,"Open Instrument instrument_PriceAlert_Arbitrage_tab");
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
+    }
+
+    public static void instrument_PriceAlert_AutoManual_SwitchToAuto() throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+        while(getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch) == "Auto") {
+            click(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch, "Open Instrument instrument_PriceAlert_Arbitrage_tab");
+            waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
+        }
+    }
+
+    public static void instrument_PriceAlert_AutoManual_SwitchToManual(String switchTo) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+        String text = getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+        while(!text.equalsIgnoreCase(switchTo)) {
+            click(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch, "Click switch to " +switchTo);
+            waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
+            text = getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+        }
+    }
+
+    public static String get_Instrument_ArbitragePriceAlert_SwitchValue() throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+        return getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
+    }
+
+    public static void click_Instrument_PriceAlert_UpdateNow() throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_UpdateNow);
+        delay(2000);
+        click(InstrumentMainPage.instrument_PriceAlert_UpdateNow, "Click Update Now Button");
+        delay(2000);
+        click(InstrumentMainPage.instrument_PriceAlert_UpdateNow, "Click Update Now Button");
+    }
+
+    public static void check_Instrument_PriceAlert_UpdateNow_State() throws InterruptedException {
+//        waitForInVisibile(InstrumentMainPage.instrument_PriceAlert_UpdateNow);
+        XAlphaDealEnquiryActions.waitForLoadingIconToAppearAndDisappear();
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_UpdateNow);
+        LogUtil.infoLog(thisClass,"Update Now button is Visible");
+    }
+
+    public static void open_Instrument_PriceAlert_ArbitrageThreshold() {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds);
+        click(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds, "Click Arbitrage Threshhold to open its modal");
+    }
 
 }

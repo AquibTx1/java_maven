@@ -874,7 +874,6 @@ Feature: Test Bots features on NitroX HomePage
     And Click total filtered bots and choose latest bot and pause it
     And Input any field with new value and again submit for PairTrading Bot
     Then Verify the Bot is updated
-    And wait for Ten Seconds
     Then Verify the Config Tab for modified field in PairTrading Bot
 
     Examples:
