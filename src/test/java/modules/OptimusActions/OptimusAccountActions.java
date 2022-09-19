@@ -311,6 +311,7 @@ public class OptimusAccountActions extends KeywordUtil {
     }
 
     public static void click_Configurations_RecordingWalletAddress_Tab() {
+        waitForPresent(OptimusAccountMainPage.account_Configurations_RecordingWalletAddress_tab);
         click(OptimusAccountMainPage.account_Configurations_RecordingWalletAddress_tab, "Clicking Recording Wallet Address Configurations Side tab");
     }
 
@@ -362,6 +363,25 @@ public class OptimusAccountActions extends KeywordUtil {
     public static String getProductAccountNameFromRecordingList() {
         waitForVisible(OptimusAccountMainPage.accountConfigurations_Recording_AccountName_List);
         return getElementText(OptimusAccountMainPage.accountConfigurations_Recording_AccountName_List);
+    }
+
+    public static void accountConfigurations_RecordingWallet_Search(String item) throws InterruptedException {
+        waitForPresent(OptimusAccountMainPage.accountConfigurations_RecordingWallet_SearchBox);
+        clearInputUsingKeys(OptimusAccountMainPage.accountConfigurations_RecordingWallet_SearchBox);
+        inputText(OptimusAccountMainPage.accountConfigurations_RecordingWallet_SearchBox, item, "Enter Search Criteria");
+        click(OptimusAccountMainPage.accountConfigurations_RecordingWallet_SearchBtn, "Click Search button ");
+//        waitForVisible(OptimusAccountMainPage.accountConfigurations_RecordingWallet_NoData_List);
+        delay(2000);
+    }
+
+    public static String get_accountConfigurations_RecordingWallet_Chain_List() {
+//        waitForVisible(OptimusAccountMainPage.accountConfigurations_RecordingWallet_Chain_List);
+        return getElementText(OptimusAccountMainPage.accountConfigurations_RecordingWallet_Chain_List);
+    }
+
+    public static String get_accountConfigurations_RecordingWallet_NoData_List() {
+//        waitForVisible(OptimusAccountMainPage.accountConfigurations_RecordingWallet_NoData_List);
+        return getElementText(OptimusAccountMainPage.accountConfigurations_RecordingWallet_NoData_List);
     }
 
 }

@@ -1502,9 +1502,6 @@ public class NitroXBotsSteps {
             try {
                 NitroXBotsAction.selectConfig();
                 Assert.assertEquals(NitroXBotsAction.getSliceSize(), dataMap.get("UpdatedSliceSize"));
-                NitroXBotsAction.CloseConfig2();
-                delay(2000);
-                NitroXBotsAction.movetoListandStopBots();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
@@ -2215,8 +2212,7 @@ public class NitroXBotsSteps {
                 delay(2000);
                 NitroXBotsAction.selectLatestBot();
                 NitroXBotsAction.pauseCurrentBot();
-                NitroXHome.waitForNotifMsg();
-                Assert.assertTrue(NitroXHome.getNotifMsg().startsWith("1 bots have been queued to be paused."));
+                delay(5000);
                 NitroXBotsAction.editLatestBot();
 
             } catch (Throwable e) {

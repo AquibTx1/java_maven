@@ -1,13 +1,18 @@
 package modules.XAlphaActions;
 
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pageFactory.OptimusPages.Portfolio.PortfolioMainPage;
 import pageFactory.XAlphaPages.XAlphaDealEnquiryPage;
 import pageFactory.XAlphaPages.XAlphaDealInputPage;
+import step_definitions.RunCukesTest;
+import utilities.HTMLReportUtil;
 import utilities.KeywordUtil;
 import utilities.LogUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class XAlphaDealEnquiryActions extends KeywordUtil {
@@ -455,9 +460,16 @@ public class XAlphaDealEnquiryActions extends KeywordUtil {
     public static void selecReview() throws InterruptedException {
         hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_reviewPagecheckbox);
         delay(2000);
-        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_reviewPagecheckbox2);
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_addedinstruction);
     }
 
+    public static void selecfirstReview() throws InterruptedException {
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_reviewPagecheckbox);
+    }
+
+    public static void AddInstrReview() throws InterruptedException {
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_addedinstruction);
+    }
 
     public static void selectPrepareEmail() {
         click(XAlphaDealEnquiryPage.tradedocuments_emailbtn,"Clicked the Prepare Email button");
@@ -490,6 +502,13 @@ public class XAlphaDealEnquiryActions extends KeywordUtil {
         LogUtil.infoLog(thisClass, "Confirmation Status is =" + status);
         return status;
     }
+
+    public static String getConfirmationStatusExdeal() {
+
+        String status = KeywordUtil.getElementText(By.xpath("//span[text()='Deal Ref']//following::tbody[1]/tr[2]/td[9]/span"));
+        LogUtil.infoLog(thisClass, "Confirmation Status is =" + status);
+        return status;
+    }
     public static String getInvoiceStatus() {
 
         String status = KeywordUtil.getElementText(By.xpath("//span[text()='Deal Ref']//following::tbody[1]/tr[2]/td[10]/span"));
@@ -514,6 +533,10 @@ public class XAlphaDealEnquiryActions extends KeywordUtil {
         click(XAlphaDealEnquiryPage.tradedocuments_generateinvoicebtn,"Clicked the Generate Invoice Button");
     }
 
+    public static void selectgenerateOrderExdeal() {
+        click(XAlphaDealEnquiryPage.tradedocuments_generateorderbtn,"Clicked the Generate Order Button");
+    }
+
     public static void goBacktoMainWindow() throws InterruptedException {
         ArrayList<String> newTb = new ArrayList<String>(getDriver().getWindowHandles());
         //switch to new tab
@@ -526,6 +549,12 @@ public class XAlphaDealEnquiryActions extends KeywordUtil {
         delay(2000);
         click(XAlphaDealEnquiryPage.tradedocuments_addReview,"Clicked ion Add Review");
 
+    }
+
+    public static void addInstructionsExDeal() throws InterruptedException {
+        hoverOnElement(XAlphaDealEnquiryPage.tradedocuments_addinstructions);
+        delay(2000);
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_newinstructions);
     }
     public static void addComments() {
         inputText(XAlphaDealEnquiryPage.tradedocuments_addcomments, "Tx-Automate Test Data", "Added Comments");
@@ -554,5 +583,54 @@ public class XAlphaDealEnquiryActions extends KeywordUtil {
         String status = KeywordUtil.getElementText(XAlphaDealEnquiryPage.TradeDocuments_dealRefconfirmationstatus);
         LogUtil.infoLog(thisClass, "Status for both Deals  is =" + status);
         return status;
+    }
+
+    public static void chooseIsCompletebutton() {
+        try {
+            hoverOnElementandClick(XAlphaDealEnquiryPage.dealEnquiry_iscompletebtn);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public static void addcomments() {
+        inputText(XAlphaDealEnquiryPage.tradedocuments_comments,"TX_Testing for Automation","Comments added");
+
+    }
+
+    public static void clickSettingIcon() throws InterruptedException {
+
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_settingicon);
+    }
+
+    public static void removeFields() throws InterruptedException {
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_entity);
+    }
+
+    public static void addTitle() throws InterruptedException {
+        inputText(XAlphaDealEnquiryPage.tradedocuments_title,"TX-Title ","Added Testing Title");
+        delay(2000);
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_confirmbtn1);
+        LogUtil.infoLog(XAlphaDealEnquiryPage.class, "Title Added");
+
+    }
+
+    public static void addSubTitle() throws InterruptedException {
+        inputText(XAlphaDealEnquiryPage.tradedocuments_subtitle,"TX-Sub Title ","Added Testing Sub Title");
+        delay(2000);
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_confirmbtn2);
+        LogUtil.infoLog(XAlphaDealEnquiryPage.class, "Sub Title Added");
+    }
+
+    public static void addAddress() throws InterruptedException {
+        inputText(XAlphaDealEnquiryPage.tradedocuments_address,"TX-Title-Address ","Added Testing Title");
+        delay(2000);
+        hoverOnElementandClick(XAlphaDealEnquiryPage.tradedocuments_confirmbtn3);
+        LogUtil.infoLog(XAlphaDealEnquiryPage.class, "Adrress Added");
+    }
+
+    public static void verifyDownloadBtn() {
+        waitForClickable(XAlphaDealEnquiryPage.tradedocuments_mailbtn);
+        RunCukesTest.logger.log(LogStatus.INFO, HTMLReportUtil.infoStringGreyColor("Download CSV button is enabled and clickable"));
     }
 }

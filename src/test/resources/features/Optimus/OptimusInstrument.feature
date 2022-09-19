@@ -313,42 +313,47 @@ Feature: Test Instrument feature
 
 
   @OptimusInstrument
-  Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from  list of Instrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Base and Quote in Existing Fiat Prices from  list of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Click the Fiat Price Side Tab Under Instrument
-    And Select Date from Search Dropdown
-    And Select Time from Search Dropdown
     And Select Base from Search Dropdown
-    And Select Quote from Search Dropdown
+    And Reload the List
     Then Verify Base in Search Results of Existing Token Prices
-    Then Verify Quote in Search Results of Existing Token Prices
-    Then Verify DateTime in Search Results of Existing Token Prices
-    Then Verify downloaded CSV Button in Instrument
-
     Examples:
       | TestCaseID                     | SheetName  |
       | QA_TestCase_Auto_Optimus_5_6_1 | Instrument |
-      | QA_TestCase_Auto_Optimus_5_6_2 | Instrument |
-
 
   @OptimusInstrument
-  Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from  list of Instrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Base and Quote in Existing Fiat Prices from  list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Fiat Price Side Tab Under Instrument
+    And Select Quote from Search Dropdown
+    And Reload the List
+    Then Verify Quote in Search Results of Existing Token Prices
+
+    Examples:
+      | TestCaseID                     | SheetName  |
+      | QA_TestCase_Auto_Optimus_5_6_2 | Instrument |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Date and Time in Existing Fiat Prices from  list of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Click the Fiat Price Side Tab Under Instrument
     And Select Date from Search Dropdown
     And Select Time from Search Dropdown
+    And Reload the List
     Then Verify DateTime in Search Results of Existing Token Prices
-    Then Verify downloaded CSV Button in Instrument
 
     Examples:
       | TestCaseID                     | SheetName  |
-#      | QA_TestCase_Auto_Optimus_5_6_3 | Instrument |
+      | QA_TestCase_Auto_Optimus_5_6_3 | Instrument |
       | QA_TestCase_Auto_Optimus_5_6_4 | Instrument |
 
   @OptimusInstrument
-  Scenario Outline: "<TestCaseID>" Able to Search the Existing Fiat Prices from list of Instrument
+  Scenario Outline: "<TestCaseID>" Able to verify Download CSV button in Search List of Fiat Prices from list of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Click the Fiat Price Side Tab Under Instrument
@@ -377,7 +382,7 @@ Feature: Test Instrument feature
       | QA_TestCase_Auto_Optimus_5_7_1_1 | Instrument |
 
   @OptimusInstrument
-  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Select Auto in Arbitrage section of Instrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Select Update Now in Arbitrage section of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Click the Alert Price Side Tab Under Instrument
@@ -388,3 +393,182 @@ Feature: Test Instrument feature
     Examples:
       | TestCaseID                       | SheetName  |
       | QA_TestCase_Auto_Optimus_5_7_1_2 | Instrument |
+
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Select Arbitrage Threshold button in Arbitrage section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Arbitrage Sub tab
+    And Click Arbitrage Threshold button on Arbitrage tab
+    Then Verify Arbitrage Threshold modal is open
+
+    Examples:
+      | TestCaseID                       | SheetName  |
+      | QA_TestCase_Auto_Optimus_5_7_1_3 | Instrument |
+
+# Price ALert
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and create New Price Alert in Price section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Price Sub tab
+    And Click Create button on Price tab page
+    And Enter All the field detail of Price Alert on Create Price modal
+    And Click submit button
+    Then Search the New Price Alert in the Price List
+    Then Verify the Alert Price Pair is Created and Available in List
+    Then Verify the Alert Price Comment is Created and Available in List
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_2_1 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Search Existing Price alert in Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Price Sub tab
+    And Search the Price Alert in the Price List
+    Then Verify the Alert Price Pair is Created and Available in List
+    Then Verify the Alert Price Comment is Created and Available in List
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_2_2 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Search Existing Price alert in  Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Price Sub tab
+    And Search the Price Alert in the Price List
+    And Click Reset button in Instrument
+    Then Verify the Search box is Reset in Instrument
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_2_3 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Delete Existing Price alert in  Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Price Sub tab
+    And Search the Price Alert in the Price List
+    And Take the Price Pair of item to be deleted
+    And Click Delete button of Price Alert in Instrument
+    Then Search for Deleted Price Alert by pair
+    Then verify Item is deleted and Not shown in Search Result
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_2_4 | InstrumentPriceAlert |
+
+#    Balance Alert
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and create New Balance Alert in Price section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Balance Sub tab
+    And Click Create button on Balance Alert tab page
+    And Enter All the field detail of Balance Alert on Create Balance modal
+    And Click submit button
+    Then Search the Balance Alert in the Price List
+    Then Verify the Alert Balance Account ID And Asset is Created and Available in List
+    Then Verify the Alert Balance Comment is Created and Available in List
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_3_1 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Search Existing Balance alert by Account ID and Asset in Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Balance Sub tab
+    Then Search the Balance Alert in the Price List
+    Then Verify the Alert Balance Account ID And Asset is Created and Available in List
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_3_2 | InstrumentPriceAlert |
+      | QA_TestCase_Auto_Optimus_5_7_3_3 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Reset the Search Criteria for Balance alert in  Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Balance Sub tab
+    Then Search the Balance Alert in the Price List
+    And Click Reset button in Balance Alert under Instrument
+    Then Verify the Empty Search box is Reset in Instrument
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_3_4 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Open Alert Prices list and Delete the Existing Balance alert in Price Alert section of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Click the Alert Price Side Tab Under Instrument
+    And Click to open Balance Sub tab
+    Then Search the Balance Alert in the Price List
+    Then Verify the Alert Balance Account ID And Asset is Created and Available in List
+    And Take the Balance Alert Details of item to be deleted
+    And Click Delete button of Balance Alert in Instrument
+    Then Search the Balance Alert in the Price List
+    Then verify Item is deleted and Not shown in Search Result
+
+    Examples:
+      | TestCaseID                       | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_7_3_5 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Base in Existing Manual Prices from list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Base from Search Dropdown in Manual Prices
+    And Reload the List
+    Then Verify Base in Search Results of Existing Manual Prices
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_1 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search the Quote in Existing Manual Prices from list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Quote from Search Dropdown in Manual Prices
+    And Reload the List
+    Then Verify Quote in Search Results of Existing Manual Prices
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_2 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search With the Date in Existing Manual Prices from list of Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the List
+    Then Verify DateTime in Search Results of Existing Manual Prices
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_3 | InstrumentPriceAlert |
+      | QA_TestCase_Auto_Optimus_5_5_4 | InstrumentPriceAlert |

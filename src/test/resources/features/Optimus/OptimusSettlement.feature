@@ -109,7 +109,7 @@ Feature: Test Settlement feature
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Click the Settlement Tab
     And Click the download csv
-    Then Verify the file is downloaded
+    Then Verify the File downloaded CSV Button
     Examples:
       | TestCaseID                      | SheetName |loginCredentials  |
       | QA_TestCase_Auto_Optimus_3_1_4 | Settlement | MO_CheckerAccount|

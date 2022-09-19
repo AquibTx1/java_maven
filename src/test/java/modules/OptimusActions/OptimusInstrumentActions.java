@@ -16,7 +16,7 @@ import utilities.LogUtil;
 
 import java.util.List;
 
-public class OptimusInstrumentActions  extends KeywordUtil {
+public class OptimusInstrumentActions extends KeywordUtil {
 
 
     static Class<OptimusInstrumentActions> thisClass = OptimusInstrumentActions.class;
@@ -44,13 +44,13 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void createAssetType(String asset_type) {
         inputText(InstrumentMainPage.Instrument_assetType, asset_type, "Select Portfolio Status=" + asset_type);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"), "Asset Type selected"+asset_type);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"), "Asset Type selected" + asset_type);
     }
 
     public static void createAssetSubType(String subtype) {
         inputText(InstrumentMainPage.Instrument_assetSubType, subtype, "Select Portfolio Status=" + subtype);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + subtype + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + subtype + "']"), "Asset Sub Type selected"+subtype);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + subtype + "']"), "Asset Sub Type selected" + subtype);
 
     }
 
@@ -62,7 +62,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void createGST(String gst) {
         inputText(InstrumentMainPage.Instrument_gst, gst, "Select Portfolio Status=" + gst);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"), "GST entered and  selected"+gst);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"), "GST entered and  selected" + gst);
 
     }
 
@@ -72,7 +72,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
 
     public static void createYOR(String year_of_release) {
         click(InstrumentMainPage.Instrument_yearofrealese, "Click in date field and Year Selected");
-        inputText(InstrumentMainPage.Instrument_yearofrealese, year_of_release, "Entered the Year "+year_of_release);
+        inputText(InstrumentMainPage.Instrument_yearofrealese, year_of_release, "Entered the Year " + year_of_release);
         pressEnter(InstrumentMainPage.Instrument_yearofrealese);
     }
 
@@ -84,7 +84,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void createStatus(String status) {
         inputText(InstrumentMainPage.Instrument_status, status, "Select Portfolio Status=" + status);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + status + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + status + "']"), "Status selected"+status);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + status + "']"), "Status selected" + status);
 
     }
 
@@ -101,11 +101,10 @@ public class OptimusInstrumentActions  extends KeywordUtil {
         click(InstrumentMainPage.Instrument_createInstrumentbtn, "Clicked the Create Button and Forwarded for Approval");
     }
 
-    public static String getAssetCode()
-    {
-        String Asset_code=getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[5]"));
-        LogUtil.infoLog(thisClass,"Asset name is ="+Asset_code);
-        return  Asset_code;
+    public static String getAssetCode() {
+        String Asset_code = getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[5]"));
+        LogUtil.infoLog(thisClass, "Asset name is =" + Asset_code);
+        return Asset_code;
     }
 
     public static String getInstrumentRefid() {
@@ -126,14 +125,14 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void updateAssetType(String asset_type) {
         inputText(InstrumentMainPage.Instrument_updateassettype, asset_type, "Select Portfolio Status=" + asset_type);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"), "Asset Type selected"+asset_type);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + asset_type + "']"), "Asset Type selected" + asset_type);
 
     }
 
     public static void updateAssetSubType(String sub_type) {
         inputText(InstrumentMainPage.Instrument_updateassetsubtype, sub_type, "Select Portfolio Status=" + sub_type);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + sub_type + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + sub_type + "']"), "Sub Asset Type selected"+sub_type);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + sub_type + "']"), "Sub Asset Type selected" + sub_type);
 
     }
 
@@ -146,7 +145,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void updateGST(String gst) {
         inputText(InstrumentMainPage.Instrument_updategst, gst, "Select Portfolio Status=" + gst);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"), "GST Updated and  selected"+gst);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + gst + "']"), "GST Updated and  selected" + gst);
 
     }
 
@@ -156,70 +155,70 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     }
 
     public static void clickUpdateInstrument() {
-        click(InstrumentMainPage.Instrument_updatebtn,"Updated the Records");
+        click(InstrumentMainPage.Instrument_updatebtn, "Updated the Records");
     }
 
     public static void deleteRecord() {
-        click(InstrumentMainPage.Instrument_deletebtn,"Deleted the Records");
+        click(InstrumentMainPage.Instrument_deletebtn, "Deleted the Records");
         waitForVisible(SettlementUpdatePage.updatesettlement_yesdeletebtn);
-        click(SettlementUpdatePage.updatesettlement_yesdeletebtn,"clicked on Yes Button");
+        click(SettlementUpdatePage.updatesettlement_yesdeletebtn, "clicked on Yes Button");
     }
 
     public static String getAssetName() {
-        String Asset_name=getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[4]"));
-        LogUtil.infoLog(thisClass,"Asset name available in the list ="+Asset_name);
-        return  Asset_name;
+        String Asset_name = getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[4]"));
+        LogUtil.infoLog(thisClass, "Asset name available in the list =" + Asset_name);
+        return Asset_name;
 
     }
 
     public static void clickTradingInstruments() {
         waitForVisible(InstrumentMainPage.Instrument_TradingInstruments);
-        click(InstrumentMainPage.Instrument_TradingInstruments,"Open Trading Instruments");
+        click(InstrumentMainPage.Instrument_TradingInstruments, "Open Trading Instruments");
     }
 
     public static void clickNewTradingInstrument() {
         waitForVisible(InstrumentMainPage.Instrument_NewTradingInstrument);
-        click(InstrumentMainPage.Instrument_NewTradingInstrument,"Open Trading Instruments");
+        click(InstrumentMainPage.Instrument_NewTradingInstrument, "Open Trading Instruments");
     }
 
     public static void createExchange(String exchange) {
         inputText(InstrumentMainPage.Instrument_Exchange, exchange, "Select Exchange =" + exchange);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"), "Exchange Type selected"+exchange);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"), "Exchange Type selected" + exchange);
     }
 
     public static void createExchangeSymbol(String exchange_symbol) {
-        newsymbol=exchange_symbol+KeywordUtil.generateRandomNumber200to500();
+        newsymbol = exchange_symbol + KeywordUtil.generateRandomNumber200to500();
         inputText(InstrumentMainPage.Instrument_ExchangeSymbol, newsymbol, "Select Exchange Symbol=" + exchange_symbol);
 
     }
 
     public static void createAltCoin(String alt_coin) {
         inputText(InstrumentMainPage.Instrument_AltCoin, alt_coin, "Select Exchange =" + alt_coin);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+alt_coin+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+alt_coin+"'])[1]"), "Alt Coin Type selected"+alt_coin);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + alt_coin + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + alt_coin + "'])[1]"), "Alt Coin Type selected" + alt_coin);
     }
 
     public static void createQuoteCoin(String quote_coin) {
         inputText(InstrumentMainPage.Instrument_QuoteCoin, quote_coin, "Select Exchange =" + quote_coin);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+quote_coin+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+quote_coin+"'])[1]"), "Quote Coin Type selected"+quote_coin);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + quote_coin + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + quote_coin + "'])[1]"), "Quote Coin Type selected" + quote_coin);
     }
 
     public static void createInsDerivateType(String instrument_derivative_type) {
         inputText(InstrumentMainPage.Instrument_InstrumentType, instrument_derivative_type, "Select Exchange =" + instrument_derivative_type);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+instrument_derivative_type+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+instrument_derivative_type+"'])[1]"), "Derivative Type selected"+instrument_derivative_type);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + instrument_derivative_type + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + instrument_derivative_type + "'])[1]"), "Derivative Type selected" + instrument_derivative_type);
     }
 
     public static void createMarginType(String margin_type) {
         inputText(InstrumentMainPage.Instrument_MarginType, margin_type, "Select Exchange =" + margin_type);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+margin_type+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+margin_type+"'])[1]"), "Margin  Type selected"+margin_type);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + margin_type + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + margin_type + "'])[1]"), "Margin  Type selected" + margin_type);
     }
 
     public static void createDeliveryDate(String delivery_date) throws InterruptedException {
-        String date=delivery_date+KeywordUtil.getCurrentDateTime();
+        String date = delivery_date + KeywordUtil.getCurrentDateTime();
         inputText(InstrumentMainPage.Instrument_DeliveryDate, date, "Delivery Date =" + date);
         delay(2000);
 
@@ -277,27 +276,27 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     }
 
     public static void createContarctSize(String contract_size) {
-        inputText(InstrumentMainPage.Instrument_Contract_Size,contract_size , "Contract Size =" + contract_size);
+        inputText(InstrumentMainPage.Instrument_Contract_Size, contract_size, "Contract Size =" + contract_size);
 
     }
 
     public static void createContractAsset(String contract_asset) {
         inputText(InstrumentMainPage.Instrument_ContractAsset, contract_asset, "Select Exchange =" + contract_asset);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+contract_asset+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+contract_asset+"'])[1]"), "Contract Asset  selected"+contract_asset);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + contract_asset + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + contract_asset + "'])[1]"), "Contract Asset  selected" + contract_asset);
 
     }
 
     public static void createSetAsset(String settlement_asset) {
         inputText(InstrumentMainPage.Instrument_SettlementAsset, settlement_asset, "Select Exchange =" + settlement_asset);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+settlement_asset+"'])[2]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+settlement_asset+"'])[2]"), "Settlement Asset selected"+settlement_asset);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + settlement_asset + "'])[2]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + settlement_asset + "'])[2]"), "Settlement Asset selected" + settlement_asset);
     }
 
     public static void createTradingStatus(String status) {
         inputText(InstrumentMainPage.Instrument_Tradingstatus, status, "Select status =" + status);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+status+"'])"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+status+"'])"), "Status  Type selected"+status);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + status + "'])"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + status + "'])"), "Status  Type selected" + status);
 
     }
 
@@ -305,56 +304,56 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     }
 
     public static String getexchangeSymbol() {
-        String es=getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[6]"));
-        LogUtil.infoLog(thisClass,"Exchange Symbol entered is ="+es);
-        return  es;
+        String es = getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[6]"));
+        LogUtil.infoLog(thisClass, "Exchange Symbol entered is =" + es);
+        return es;
     }
 
     public static String getAltcoin() {
-        String es=getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[7]"));
-        LogUtil.infoLog(thisClass,"Exchange Symbol entered is ="+es);
-        return  es;
+        String es = getElementText(By.xpath("//span[text()='Instrument Ref.']//following::tr[2]/td[7]"));
+        LogUtil.infoLog(thisClass, "Exchange Symbol entered is =" + es);
+        return es;
     }
 
     public static void updateExchange(String exchange) {
         inputText(InstrumentMainPage.Instrument_updateExchange, exchange, "Select Exchange =" + exchange);
         waitForVisible(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"));
-        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"), "Exchange Type selected"+exchange);
+        KeywordUtil.click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()='" + exchange + "']"), "Exchange Type selected" + exchange);
     }
 
     public static void updateAltcoin(String alt_coin) {
 
         inputText(InstrumentMainPage.Instrument_updateAltCoin, alt_coin, "Select Exchange =" + alt_coin);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+alt_coin+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+alt_coin+"'])[1]"), "Alt Coin Type updated"+alt_coin);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + alt_coin + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + alt_coin + "'])[1]"), "Alt Coin Type updated" + alt_coin);
 
     }
 
     public static void updateQuoteCoin(String quote_coin) {
         inputText(InstrumentMainPage.Instrument_updateQuoteCoin, quote_coin, "Select Exchange =" + quote_coin);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+quote_coin+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+quote_coin+"'])[1]"), "Quote Coin Type updated"+quote_coin);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + quote_coin + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + quote_coin + "'])[1]"), "Quote Coin Type updated" + quote_coin);
 
     }
 
     public static void updateDerivateType(String instrument_derivative_type) {
         inputText(InstrumentMainPage.Instrument_updateInstrumentType, instrument_derivative_type, "Select Exchange =" + instrument_derivative_type);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+instrument_derivative_type+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+instrument_derivative_type+"'])[1]"), "Derivative Type Updated"+instrument_derivative_type);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + instrument_derivative_type + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + instrument_derivative_type + "'])[1]"), "Derivative Type Updated" + instrument_derivative_type);
 
     }
 
     public static void updateMarginType(String margin_type) {
         inputText(InstrumentMainPage.Instrument_updateMarginType, margin_type, "Select Exchange =" + margin_type);
-        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+margin_type+"'])[1]"));
-        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='"+margin_type+"'])[1]"), "Margin  Type Updated"+margin_type);
+        waitForVisible(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + margin_type + "'])[1]"));
+        KeywordUtil.click(By.xpath("(//div[@class='rc-virtual-list-holder-inner']//div[text()='" + margin_type + "'])[1]"), "Margin  Type Updated" + margin_type);
 
 
     }
 
     public static void updateDeliveryDate(String delivery_date) throws InterruptedException {
         clearInputUsingKeys(InstrumentMainPage.Instrument_updateDeliveryDate);
-        String date=delivery_date+KeywordUtil.getCurrentDateTime();
+        String date = delivery_date + KeywordUtil.getCurrentDateTime();
         inputText(InstrumentMainPage.Instrument_updateDeliveryDate, date, "Updated Delivery Date is =" + date);
         delay(2000);
 
@@ -397,7 +396,7 @@ public class OptimusInstrumentActions  extends KeywordUtil {
 
     public static void clickInstrument_Futures_SideTab() throws InterruptedException {
         waitForVisible(InstrumentMainPage.InstrumentFutures_SideTab);
-        click(InstrumentMainPage.InstrumentFutures_SideTab,"Open Instrument Futures_SideTab");
+        click(InstrumentMainPage.InstrumentFutures_SideTab, "Open Instrument Futures_SideTab");
         waitForVisible(InstrumentMainPage.instrumentFutures_Exchange_dropdown_List);
         delay(5000);
     }
@@ -412,19 +411,20 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static String get_Exchange_FutureSearchList() {
         waitForVisible(InstrumentMainPage.instrumentFuture_ExchangeName_List);
         String text = getElementText(InstrumentMainPage.instrumentFuture_ExchangeName_List);
-        LogUtil.infoLog(thisClass, "Element text contains " +text);
+        LogUtil.infoLog(thisClass, "Element text contains " + text);
         return text;
     }
+
     public static String get_ExchangeSymbol_FutureSearchList() {
         waitForVisible(InstrumentMainPage.instrumentFuture_ExchangeSymbol_List);
         String text = getElementText(InstrumentMainPage.instrumentFuture_ExchangeSymbol_List);
-        LogUtil.infoLog(thisClass, "Element Exchange Symbol text contains " +text);
+        LogUtil.infoLog(thisClass, "Element Exchange Symbol text contains " + text);
         return text;
     }
 
     public static void clickInstrument_TokenPrices_SideTab() throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_SideTab);
-        click(InstrumentMainPage.instrumentTokenPrices_SideTab,"Open Instrument Token Prices_SideTab");
+        click(InstrumentMainPage.instrumentTokenPrices_SideTab, "Open Instrument Token Prices_SideTab");
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Base_List);
 //        delay(5000);
         waitForInVisibile(XAlphaDealEnquiryPage.dealEnquiry_loading);
@@ -472,32 +472,38 @@ public class OptimusInstrumentActions  extends KeywordUtil {
             element.click();
         }
     }
+
     public static void clickReload() throws InterruptedException {
         click(InstrumentMainPage.instrumentTokenPrices_Reload_List, "Clicking Reload");
         XAlphaDealEnquiryActions.waitForLoadingIconToAppearAndDisappear();
-        delay(70000);
+        delay(90000);
     }
+
     public static String get_Base_TokenPriceSearchList() throws InterruptedException {
-        delay(3000);
+//        delay(30000);
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Quote_List);
         String text = getElementText(InstrumentMainPage.instrumentTokenPrices_Base_List);
-        LogUtil.infoLog(thisClass, "Base Value text contains " +text);
+        LogUtil.infoLog(thisClass, "Base Value text contains " + text);
         return text;
     }
 
-    public static String get_Quote_TokenPriceSearchList() {
+    public static String get_Quote_TokenPriceSearchList() throws InterruptedException {
+//        delay(30000);
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Quote_List);
         String text = getElementText(InstrumentMainPage.instrumentTokenPrices_Quote_List);
-        LogUtil.infoLog(thisClass, "Quote Value text contains " +text);
+        LogUtil.infoLog(thisClass, "Quote Value text contains " + text);
         return text;
     }
+
     public static String get_DateTime_TokenPriceSearchList() throws InterruptedException {
-        clickReload();
+//        delay(20000);
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Date_List);
+        delay(30000);
         String text = getElementText(InstrumentMainPage.instrumentTokenPrices_Date_List);
-        LogUtil.infoLog(thisClass, "Date time Value text contains " +text);
+        LogUtil.infoLog(thisClass, "Date time Value text contains " + text);
         return text;
     }
+
     public static void verifyDownloadCSVBtn() {
         waitForClickable(InstrumentMainPage.instrumentTokenPrices_DownloadCSVBtn_List);
         RunCukesTest.logger.log(LogStatus.INFO, HTMLReportUtil.infoStringGreyColor("Download CSV button is enabled and clickable"));
@@ -505,26 +511,26 @@ public class OptimusInstrumentActions  extends KeywordUtil {
 
     public static void clickInstrument_FiatPrices_SideTab() throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_FiatPrices_SideTab);
-        click(InstrumentMainPage.instrument_FiatPrices_SideTab,"Open Instrument Token Prices_SideTab");
+        click(InstrumentMainPage.instrument_FiatPrices_SideTab, "Open Instrument Token Prices_SideTab");
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Base_List);
     }
 
 
     public static void clickInstrument_PriceAlert_SideTab() throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_SideTab);
-        click(InstrumentMainPage.instrument_PriceAlert_SideTab,"Open Instrument Prices Alert_SideTab");
+        click(InstrumentMainPage.instrument_PriceAlert_SideTab, "Open Instrument Prices Alert_SideTab");
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
     }
 
     public static void clickInstrument_PriceAlert_Arbitrage_tab() throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
-        click(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab,"Open Instrument instrument_PriceAlert_Arbitrage_tab");
+        click(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab, "Open Instrument instrument_PriceAlert_Arbitrage_tab");
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
     }
 
     public static void instrument_PriceAlert_AutoManual_SwitchToAuto() throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
-        while(getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch) == "Auto") {
+        while (getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch) == "Auto") {
             click(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch, "Open Instrument instrument_PriceAlert_Arbitrage_tab");
             waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
         }
@@ -533,8 +539,8 @@ public class OptimusInstrumentActions  extends KeywordUtil {
     public static void instrument_PriceAlert_AutoManual_SwitchToManual(String switchTo) throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
         String text = getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
-        while(!text.equalsIgnoreCase(switchTo)) {
-            click(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch, "Click switch to " +switchTo);
+        while (!text.equalsIgnoreCase(switchTo)) {
+            click(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch, "Click switch to " + switchTo);
             waitForVisible(InstrumentMainPage.instrument_PriceAlert_Arbitrage_tab);
             text = getElementText(InstrumentMainPage.instrument_PriceAlert_AutoManual_Switch);
         }
@@ -557,12 +563,245 @@ public class OptimusInstrumentActions  extends KeywordUtil {
 //        waitForInVisibile(InstrumentMainPage.instrument_PriceAlert_UpdateNow);
         XAlphaDealEnquiryActions.waitForLoadingIconToAppearAndDisappear();
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_UpdateNow);
-        LogUtil.infoLog(thisClass,"Update Now button is Visible");
+        LogUtil.infoLog(thisClass, "Update Now button is Visible");
     }
 
     public static void open_Instrument_PriceAlert_ArbitrageThreshold() {
         waitForVisible(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds);
         click(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds, "Click Arbitrage Threshhold to open its modal");
     }
+
+    public static String get_Instrument_PriceAlert_ArbitrageThreshold_Modal() {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds_Modal);
+        String header = getElementText(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds_Modal);
+        click(InstrumentMainPage.instrument_PriceAlert_ArbitrageThresholds_ModalCancel, "Modal is closed on clickng Cancel");
+        return header;
+    }
+
+    public static void open_Instrument_PriceAlert_Price_SubTab() {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_Price_SubTab);
+        click(InstrumentMainPage.instrument_PriceAlert_Price_SubTab, "Click Price tab under Price Alert");
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Create);
+    }
+
+    public static void instrumentPriceAlert_Price_Search(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Price_SearchBox, item, "Search Price item = " + item);
+    }
+
+    public static String get_InstrumentPriceAlert_Price_Search_Text() {
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Price_SearchBox);
+    }
+
+    public static String get_InstrumentPriceAlert_Price_Pair_List() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Pair_List);
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Price_Pair_List);
+    }
+
+    public static String get_InstrumentPriceAlert_Price_Comment_List() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Comment_List);
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Price_Comment_List);
+    }
+
+    public static void instrumentPriceAlert_Price_Reset() {
+        click(InstrumentMainPage.instrumentPriceAlert_Price_Reset, "Click Reset to reset filter");
+    }
+
+    public static void instrumentPriceAlert_Price_Delete() {
+        click(InstrumentMainPage.instrumentPriceAlert_Price_Delete, "Click Delete to Delete Price alert");
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Delete_YesBtn);
+        click(InstrumentMainPage.instrumentPriceAlert_Price_Delete_YesBtn, "Click Yes to Delete");
+    }
+
+
+    // Balance alert Tab
+    public static void open_Instrument_PriceAlert_Balance_SubTab() {
+        waitForVisible(InstrumentMainPage.instrument_PriceAlert_Balance);
+        click(InstrumentMainPage.instrument_PriceAlert_Balance, "Click Balance tab under Price Alert");
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_AccountID_SearchBox);
+    }
+
+    public static void open_Instrument_PriceAlert_Create_Balance() {
+//        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Create);
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Create, "Click Balance tab under Price Alert");
+//        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Create_popUp);
+    }
+
+    public static void instrumentPriceAlert_Balance_Search(String item1, String item2) throws InterruptedException {
+        delay(5000);
+        hoverOnElementandClick(InstrumentMainPage.instrumentPriceAlert_Balance_AccountID_SearchBox);
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_AccountID_SearchBox, item1, "Search Balance Price Account ID = " + item1);
+        pressEnter(InstrumentMainPage.instrumentPriceAlert_Balance_AccountID_SearchBox);
+        delay(2000);
+        hoverOnElementandClick(InstrumentMainPage.instrumentPriceAlert_Balance_DataAsset_SearchBox);
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_DataAsset_SearchBox, item2, "Search Balance Price Data Asset ID = " + item2);
+        pressEnter(InstrumentMainPage.instrumentPriceAlert_Balance_DataAsset_SearchBox);
+        pressTabKey(InstrumentMainPage.instrumentPriceAlert_Balance_DataAsset_SearchBox);
+    }
+
+    public static String get_InstrumentPriceAlert_Balance_Search_AccountID() {
+        return getElementText(By.xpath(String.format("//input[@id='filter_data_account_ids']//parent::div//parent::div//parent::div[@class='ant-select-selection-overflow']")));
+//        return getElementText(InstrumentMainPage.instrumentPriceAlert_Balance_AccountID_SearchBox);
+    }
+
+    public static String get_InstrumentPriceAlert_Balance_Search_DataAsset() {
+        return getElementText(By.xpath(String.format("//input[@id='filter_data_assets']//parent::div//parent::div//parent::div[@class='ant-select-selection-overflow']")));
+//        return getElementText(InstrumentMainPage.instrumentPriceAlert_Balance_DataAsset_SearchBox);
+    }
+
+    public static void instrumentPriceAlert_Balance_Reset() {
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Reset, "Click Reset to reset Balance filters");
+    }
+
+    public static void instrumentPriceAlert_Balance_Delete() {
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Delete_List, "Click Delete to Delete Balance Price alert");
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Delete_YesBtn);
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Delete_YesBtn, "Click Yes to confirm delete");
+    }
+
+
+    public static void open_InstrumentPriceAlert_Price_Create() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Create);
+        click(InstrumentMainPage.instrumentPriceAlert_Price_Create, "Click Create in Price tab");
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Price_Modal);
+    }
+
+    public static void instrumentPriceAlert_Price_Exchange(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Price_Exchange, item, "Input Exchange=" + item);
+//        waitForVisible(By.xpath(InstrumentMainPage.instrumentPriceAlert_Price_Exchange_Options));
+        pressEnter(InstrumentMainPage.instrumentPriceAlert_Price_Exchange);
+    }
+
+    public static void instrumentPriceAlert_Price_Pair(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Price_Pair, item, "Input Pair=" + item);
+    }
+
+    public static void instrumentPriceAlert_Price_IsItAMagicPair(String item) throws InterruptedException {
+        hoverOnElementandClick(InstrumentMainPage.instrumentPriceAlert_Price_IsItAMagicPair);
+        delay(2000);
+        click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()=' " + item + " ']"), "Clicked " + item);
+    }
+
+    public static void instrumentPriceAlert_Price_Operator(String item) throws InterruptedException {
+        hoverOnElementandClick(InstrumentMainPage.instrumentPriceAlert_Price_Operator);
+        click(By.xpath("//div[@class='rc-virtual-list-holder-inner']//div[text()=' " + item + " ']"), "Clicked " + item);
+    }
+
+    public static void instrumentPriceAlert_Price_Price(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Price_Price, item, "Input Price=" + item);
+    }
+
+    public static void instrumentPriceAlert_Price_Comment(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Price_Comment, item, "Input Comment=" + item);
+    }
+
+    public static void click_InstrumentPriceAlert_Price_Submit() {
+        click(InstrumentMainPage.instrumentPriceAlert_Price_Submit, "Click Submit button");
+    }
+
+    public static void instrumentPriceAlert_Balance_Account_Create(String item) throws InterruptedException {
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Account_Create, "Clicking Account in create modal");
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_Account_Create, item, "Input Balance Account=" + item);
+//        pressEnter(InstrumentMainPage.instrumentPriceAlert_Balance_Account_Create);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrumentPriceAlert_Balance_Account_Create_Options, item)));
+        click(By.xpath(String.format(InstrumentMainPage.instrumentPriceAlert_Balance_Account_Create_Options, item)), "Balance Asset selected");
+
+    }
+
+    public static void instrumentPriceAlert_Balance_Asset_Create(String item) {
+        click(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_Create, "Input Balance Asset=" + item);
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_Create, item, "Input Balance Asset=" + item);
+//        pressEnter(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_Create);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_Create_Options, item)));
+        click(By.xpath(String.format(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_Create_Options, item)), "Balance Asset selected");
+    }
+
+    public static void instrumentPriceAlert_Balance_Operator_Create(String item) throws InterruptedException {
+        hoverOnElementandClick(InstrumentMainPage.instrumentPriceAlert_Balance_Operator_Create);
+        waitForVisible(By.xpath(InstrumentMainPage.instrumentPriceAlert_Balance_Operator_Create_Options));
+        click(By.xpath(String.format(InstrumentMainPage.instrumentPriceAlert_Balance_Operator_Create_Options, item)), "Balance Operator selected");
+    }
+
+    public static void instrumentPriceAlert_Balance_Amount_Create(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_Amount_Create, item, "Input Balance Operator=" + item);
+    }
+
+    public static void instrumentPriceAlert_Balance_Comment_Create(String item) {
+        inputText(InstrumentMainPage.instrumentPriceAlert_Balance_Comment_Create, item, "Input Balance comment=" + item);
+    }
+
+    public static String get_InstrumentPriceAlert_Balance_Account_List() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Account_List);
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Balance_Account_List);
+    }
+
+    public static String get_InstrumentPriceAlert_Balance_Asset_List() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_List);
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Balance_Asset_List);
+    }
+
+    public static String get_InstrumentPriceAlert_Balance_Comment_List() {
+        waitForVisible(InstrumentMainPage.instrumentPriceAlert_Balance_Comment_List);
+        return getElementText(InstrumentMainPage.instrumentPriceAlert_Balance_Comment_List);
+    }
+
+    public static void open_instrument_ManualPrices_SideTab() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_SideTab);
+        click(InstrumentMainPage.instrument_ManualPrices_SideTab, "Click to Open Manual Prices tab");
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Base_Search);
+    }
+    public static void click_instrument_ManualPrices_Reset_Search() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Reset_Search);
+        click(InstrumentMainPage.instrument_ManualPrices_Reset_Search, "Click to Open Manual Prices tab");
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Base_Search);
+    }
+
+    public static void instrument_ManualPrices_Base_Search(String item) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Base_Search);
+        hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Base_Search);
+        inputText(InstrumentMainPage.instrument_ManualPrices_Base_Search, item, "Search Manual Price Base = " + item);
+        pressEnter(InstrumentMainPage.instrument_ManualPrices_Base_Search);
+    }
+
+    public static void instrument_ManualPrices_Quote_Search(String item) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Quote_Search);
+        hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Quote_Search);
+        inputText(InstrumentMainPage.instrument_ManualPrices_Quote_Search, item,"Enter Quote in search Manual Prices tab");
+        pressEnter(InstrumentMainPage.instrument_ManualPrices_Quote_Search);
+    }
+
+    public static void instrument_ManualPrices_StartDate_Search(String item) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_StartDate_Search);
+        hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_StartDate_Search);
+        inputText(InstrumentMainPage.instrument_ManualPrices_StartDate_Search, item,"Enter Start date in search Manual Prices tab");
+        pressEnter(InstrumentMainPage.instrument_ManualPrices_StartDate_Search);
+    }
+
+    public static void instrument_ManualPrices_EndDate_Search(String item) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_EndDate_Search);
+        hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_EndDate_Search);
+        inputText(InstrumentMainPage.instrument_ManualPrices_EndDate_Search, item,"Enter End date in search Manual Prices tab");
+        pressEnter(InstrumentMainPage.instrument_ManualPrices_EndDate_Search);
+    }
+
+    public static String get_instrument_ManualPrices_Base_List() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Base_List);
+        return getElementText(InstrumentMainPage.instrument_ManualPrices_Base_List);
+    }
+
+    public static String get_instrument_ManualPrices_Quote_List() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Quote_List);
+        return getElementText(InstrumentMainPage.instrument_ManualPrices_Quote_List);
+    }
+
+    public static String get_instrument_ManualPrices_Price_List() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Price_List);
+        return getElementText(InstrumentMainPage.instrument_ManualPrices_Price_List);
+    }
+
+    public static String get_instrument_ManualPrices_Date_List() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Date_List);
+        return getElementText(InstrumentMainPage.instrument_ManualPrices_Date_List);
+    }
+
 
 }

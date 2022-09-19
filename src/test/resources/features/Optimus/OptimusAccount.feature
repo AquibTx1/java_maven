@@ -299,3 +299,34 @@ Feature: Test CounterParty feature
     Examples:
       | TestCaseID                     | SheetName    |
       | QA_TestCase_Auto_Optimus_6_3_6 | NitroAccount |
+
+
+#  @OptimusAccount
+#  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Delete Recording Accounts Configurations in Account
+#    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+#    And Open Account main tab
+#    And Open Configurations side tab in Accounts
+#    And open Recording Accounts tab in Configurations under Accounts
+#    And Search for Existing Recording Account in List
+#    And Delete the Searched Recording Account in List
+#    Then Verify Success Message on Create and Update Page
+#
+#    Examples:
+#      | TestCaseID                     | SheetName    |
+#      | QA_TestCase_Auto_Optimus_6_3_1 | NitroAccount |
+
+
+  @OptimusAccount
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Delete Recording Accounts Configurations in Account
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open Account main tab
+    And Open Configurations side tab in Accounts
+    And open Recording Wallet Address tab in Configurations under Accounts
+    And Search for "BTC1" Existing Recording Wallet in List
+    Then Verify Search Result has "No Data" in list
+    And Search for "BTC" Existing Recording Wallet in List
+    Then Verify Search Result has "BTC" in list
+
+    Examples:
+      | TestCaseID                     | SheetName    |
+      | QA_TestCase_Auto_Optimus_6_3_2 | NitroAccount |

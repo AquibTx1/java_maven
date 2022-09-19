@@ -31,7 +31,7 @@ public class NitroXUserLogin {
     public static void clickloginbtn()
     {
 
-        KeywordUtil.click(NitroXLoginPage.loginbtn, "Click on Sign on Button");
+        KeywordUtil.click(NitroXLoginPage.loginbtn, "Click on Submit Button");
     }
 
 }

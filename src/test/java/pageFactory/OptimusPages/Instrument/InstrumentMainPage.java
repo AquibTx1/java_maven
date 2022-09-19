@@ -105,16 +105,27 @@ public class InstrumentMainPage {
     public static By instrument_PriceAlert_UpdateNow = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[2]/button/span[contains(text(),'Update Now')]");
     public static By instrument_PriceAlert_ArbitrageThresholds = By.xpath("//div[@class='ant-space ant-space-horizontal ant-space-align-center']/div[3]/button/span");
     public static By instrument_PriceAlert_ArbitrageThresholds_Modal = By.cssSelector(".ant-modal-content > div.ant-modal-header");
-    public static By instrument_PriceAlert_Price = By.xpath("//div[@class='ant-tabs-nav-list']/div[2]/div[contains(text(),'Price')]");
+    public static By instrument_PriceAlert_ArbitrageThresholds_ModalCancel = By.xpath("//button/span[contains(text(),'Cancel')]");
+    public static By instrument_PriceAlert_Price_SubTab = By.xpath("//div[@class='ant-tabs-nav-list']/div[2]/div[contains(text(),'Price')]");
     public static By instrumentPriceAlert_Price_Create = By.xpath("//div[@class='ant-tabs-content-holder']/div[1]/div[2]/button[@type='button']/span[contains(text(),'Create')]");
     public static By instrumentPriceAlert_Price_SearchBox = By.xpath("//input[@id='filterForm_search']");
-    public static By instrumentPriceAlert_Price_Reset = By.xpath("//button/span[contains(text(),'Reset')]");
-    public static By instrumentPriceAlert_Price_Delete = By.xpath("//tbody/tr[2]/td[7]/div/div/button/span[contains(text(),'Delete')]");
+    public static By instrumentPriceAlert_Price_Reset = By.xpath("(//button/span[contains(text(),'Reset')])[1]");
+    public static By instrumentPriceAlert_Price_Delete = By.xpath("(//tbody/tr[2]/td[7]/div/div/button/span[contains(text(),'Delete')])[1]");
+    public static By instrumentPriceAlert_Price_Delete_YesBtn = By.xpath("//div[@class='ant-popover ant-popconfirm ant-popover-placement-right ']/div/div[2]/div/div[2]/button/span[text()='Yes']");
+    public static By instrumentPriceAlert_Balance_Delete_YesBtn = By.xpath("//div[@class='ant-popover-content']/div[2]/div/div[2]/button[2]");
+
+    public static By instrumentPriceAlert_Price_Pair_List = By.xpath("(//tbody/tr[2]/td[3])[2]");
+    public static By instrumentPriceAlert_Price_Comment_List = By.xpath("(//tbody/tr[2]/td[6])[2]");
+
     public static By instrumentPriceAlert_Price_Modal = By.className("ant-modal");
     public static By instrumentPriceAlert_Price_Exchange = By.id("create_alert_exchange");
+    public static String instrumentPriceAlert_Price_Exchange_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
+
     public static By instrumentPriceAlert_Price_Pair = By.id("create_alert_pair");
     public static By instrumentPriceAlert_Price_IsItAMagicPair = By.id("create_alert_is_magic_pair");
+    public static String instrumentPriceAlert_Price_IsItAMagicPair_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Price_Operator = By.id("create_alert_mode");
+    public static String instrumentPriceAlert_Price_Operator_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Price_Price = By.id("create_alert_price");
     public static By instrumentPriceAlert_Price_Comment = By.id("create_alert_comment");
     public static By instrumentPriceAlert_Price_Submit = By.xpath("//button[@type='submit']");
@@ -122,20 +133,45 @@ public class InstrumentMainPage {
 
     public static By instrument_PriceAlert_Balance = By.xpath("//div[@class='ant-tabs-nav-list']/div[3]/div[contains(text(),'Balance')]");
     public static By instrumentPriceAlert_Balance_Create = By.xpath("//div[@class='ant-tabs-content-holder']/div[1]/div[3]/button[@type='button']/span[contains(text(),'Create')]");
+    public static By instrumentPriceAlert_Balance_Create_popUp = By.xpath("(//div[@class='ant-modal'][@role='document'])[2]");
+
     public static By instrumentPriceAlert_Balance_AccountID_SearchBox = By.id("filter_data_account_ids");
+    public static String instrumentPriceAlert_Balance_AccountID_SearchBox_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Balance_DataAsset_SearchBox = By.id("filter_data_assets");
+    public static String instrumentPriceAlert_Balance_DataAsset_SearchBox_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Balance_Reset = By.cssSelector("#filter_data > button > span");
-    public static By instrumentPriceAlert_Balance_AccountID_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[3]/div/div/div/div/div[@class='ant-table-container']/div[2]/table/tbody/tr[2]/td[1]");
-    public static By instrumentPriceAlert_Balance_AccountName_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[3]/div/div/div/div/div[@class='ant-table-container']/div[2]/table/tbody/tr[2]/td[2]");
+//    public static By instrumentPriceAlert_Balance_AccountID_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[3]/div/div/div/div/div[@class='ant-table-container']/div[2]/table/tbody/tr[2]/td[1]");
+//    public static By instrumentPriceAlert_Balance_AccountName_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[3]/div/div/div/div/div[@class='ant-table-container']/div[2]/table/tbody/tr[2]/td[2]");
     public static By instrumentPriceAlert_Balance_Delete_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[3]/div/div/div/div/div[@class='ant-table-container']/div[2]/table/tbody/tr[2]/td[7]/div");
 
     public static By instrumentPriceAlert_Balance_Account_Create = By.id("create_alert_account_id");
+    public static String instrumentPriceAlert_Balance_Account_Create_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Balance_Asset_Create = By.id("create_alert_asset");
+    public static String instrumentPriceAlert_Balance_Asset_Create_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Balance_AssetStatus_Create = By.xpath("//div[@class='ant-select-selector']/span[@class='ant-select-selection-item']");
     public static By instrumentPriceAlert_Balance_Operator_Create = By.id("create_alert_opr");
+    public static String instrumentPriceAlert_Balance_Operator_Create_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
     public static By instrumentPriceAlert_Balance_Amount_Create = By.id("create_alert_amount");
-    public static By instrumentPriceAlert_Balance_Comment_Create = By.id("create_alert_account_id");
+    public static By instrumentPriceAlert_Balance_Comment_Create = By.id("create_alert_comment");
+    public static By instrument_PriceAlert_Balance_Table_ID_Sort = By.xpath("(//span[@aria-label='caret-down'][@class='anticon anticon-caret-down ant-table-column-sorter-down active'])[2]");
 
+    public static By instrumentPriceAlert_Balance_Account_List = By.xpath("(//tbody/tr[2]/td[2])[2]");
+
+    public static By instrumentPriceAlert_Balance_Asset_List = By.xpath("(//tbody/tr[2]/td[3])[2]");
+    public static By instrumentPriceAlert_Balance_Comment_List = By.xpath("//main/div/div[2]/div/div[3]/div[@class='ant-table-wrapper']/div/..//div[@class='ant-table-body']/table/tbody/tr[2]/td[6]");
+
+
+    //Manual Prices
+    public static By instrument_ManualPrices_SideTab = By.xpath("//ul/li/span/a[contains(text(),'Manual Prices')]");
+    public static By instrument_ManualPrices_Base_Search = By.xpath("//main/div[@class='ant-row']/div[1]/div/div/div/div/div/input");
+    public static By instrument_ManualPrices_Quote_Search = By.xpath("//main/div[@class='ant-row']/div[2]/div/div/div/div/div/input");
+    public static By instrument_ManualPrices_StartDate_Search = By.xpath("//input[@placeholder='Start Date']");
+    public static By instrument_ManualPrices_EndDate_Search = By.xpath("//input[@placeholder='End Date']");
+    public static By instrument_ManualPrices_Reset_Search = By.xpath("//button/span[@aria-label='clear']");
+    public static By instrument_ManualPrices_Base_List = By.xpath("//tbody/tr[2]/td[2]");
+    public static By instrument_ManualPrices_Quote_List = By.xpath("//tbody/tr[2]/td[3]");
+    public static By instrument_ManualPrices_Price_List = By.xpath("//tbody/tr[2]/td[4]");
+    public static By instrument_ManualPrices_Date_List = By.xpath("//tbody/tr[2]/td[5]");
 
 
 

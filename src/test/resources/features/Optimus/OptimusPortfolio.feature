@@ -113,7 +113,7 @@ Feature: Test Portfolio feature as mentioned in Test Case
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Click the Portfolio Tab
     And Click the download csv
-    Then Verify the file is downloaded
+    Then Verify the File downloaded CSV Button
     Examples:
       | TestCaseID                      | SheetName |loginCredentials  |
       | QA_TestCase_Auto_Optimus_4_1_5 | Portfolio | MO_CheckerAccount|

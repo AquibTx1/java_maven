@@ -753,7 +753,7 @@ public class NitroXBotsAction {
 
     }
     public static void editLatestBot() {
-        click(NitroXBotsPage.editbotbtn, "Current Bot Stopped");
+        click(NitroXBotsPage.editbotbtn, "Current Bot Edited");
     }
     public static void duplicateLatestBot() {
         click(NitroXBotsPage.duplicatebotbtn, "Current Bot Stopped");

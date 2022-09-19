@@ -24,6 +24,7 @@ public class OptimusAccountMainPage {
     public static By account_Configuration_Search_Btn = By.xpath("//input[@placeholder='search account']//parent::span/span/button");
     public static By account_Configurations_RecordingAccounts_tab = By.xpath("//div[@class='ant-tabs-nav-list']/div/div[contains(text(),'Recording Accounts')]");
     public static By account_Configurations_RecordingWalletAddress_tab = By.xpath("//div[@class='ant-tabs-nav-list']/div/div[contains(text(),'Recording Wallet Addresses')]");
+
     public static By account_Configurations_AddAccount_List = By.xpath("//div[@class='ant-tabs-content-holder']/div/div[2]/div/div[@class='_ctrl_1bi9q_1']/button[2]");
     public static By accountConfigurations_Recording_CloseDeleteAccount_List = By.xpath("//tbody/tr[1]/td[7]/div[1]/button[2]/span");
     public static By account_Configurations_OKDeleteAccount_popUp_List = By.xpath("//div[@class='ant-popover-content']/div[2]/div/div[2]/button[2]/span[contains(text(),'OK')]");
@@ -37,5 +38,13 @@ public class OptimusAccountMainPage {
     public static By accountConfigurations_Recording_ProductName = By.id("add_recording_acc_nitro_account_id");
     public static String accountConfigurations_Recording_ProductName_Options = "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s";
     public static By accountConfigurations_Recording_AddRecording_CreateBtn = By.xpath("//button[@type='submit']/span[contains(text(),'Add Account')]");
+
+    public static By accountConfigurations_RecordingWallet_SearchBox = By.xpath("//input[@placeholder='search address']");
+    public static By accountConfigurations_RecordingWallet_SearchBtn = By.cssSelector(".ant-btn.ant-btn-icon-only.ant-input-search-button");
+    public static By accountConfigurations_RecordingWallet_Chain_List = By.xpath("//tbody/tr[1]/td[4]");
+    public static By accountConfigurations_RecordingWallet_NoData_List = By.xpath("//div[@class='ant-empty-description']");
+
+
+
 
 }
