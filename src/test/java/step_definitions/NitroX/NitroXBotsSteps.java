@@ -203,14 +203,13 @@ public class NitroXBotsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
                 NitroXBotsAction.clickDealtOrdersTab();
                 delay(15000);
                 Assert.assertEquals(NitroXHome.getSideofNthDealtOrder(1), dataMap.get("Order Direction"));
                 Assert.assertEquals(NitroXHome.getPriceofNthDealtOrder(1), NitroXBotsAction.getPrice());
-                NitroXBotsAction.stopCurrentBot();
-
+                NitroXBotsAction.stopalltheBot();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
@@ -309,13 +308,13 @@ public class NitroXBotsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
                 NitroXBotsAction.clickDealtOrdersTab();
                 delay(15000);
                 Assert.assertEquals(NitroXHome.getSideofNthDealtOrder(1), dataMap.get("Order Direction"));
                 Assert.assertEquals(NitroXHome.getPriceofNthDealtOrder(1), NitroXBotsAction.getBidPrice());
-                NitroXBotsAction.stopCurrentBot();
+                NitroXBotsAction.stopalltheBot();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
@@ -493,14 +492,13 @@ public class NitroXBotsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
                 NitroXBotsAction.clickDealtOrdersTab();
                 delay(20000);
                // Assert.assertEquals(NitroXBotsAction.dealtamount, dataMap.get("TotalAmount"));
                 Assert.assertEquals(NitroXHome.getSideofNthDealtOrder(1),dataMap.get("Side"));
-                NitroXBotsAction.stopCurrentBot();
-
+                NitroXBotsAction.stopalltheBot();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
@@ -543,13 +541,12 @@ public class NitroXBotsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
                 NitroXBotsAction.clickDealtOrdersTab();
                 delay(20000);
                 Assert.assertEquals(NitroXHome.getSideofNthDealtOrder(1),dataMap.get("Side"));
-                NitroXBotsAction.stopCurrentBot();
-
+                NitroXBotsAction.stopalltheBot();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
@@ -642,7 +639,7 @@ public class NitroXBotsSteps {
                 NitroXBotsAction.sortStartTime();
                 NitroXBotsAction.selectLatestBotName();
                 NitroXBotsAction.validateStatus();
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
 
             } catch (Throwable e) {
@@ -671,7 +668,7 @@ public class NitroXBotsSteps {
                 NitroXBotsAction.selectConfig();
                 Assert.assertEquals(NitroXBotsAction.getDealRef(), NitroXBotsAction.dealref);
                // Assert.assertEquals(NitroXBotsAction.getQuantity(), dataMap.get("Quantity"));
-                NitroXBotsAction.CloseConfig();
+                NitroXBotsAction.CloseConfig2();
                 NitroXBotsAction.CloseBotDetail();
                 NitroXBotsAction.stopCurrentBot();
             } catch (Throwable e) {

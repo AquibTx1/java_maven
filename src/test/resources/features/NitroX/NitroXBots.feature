@@ -21,10 +21,11 @@ Feature: Test Bots features on NitroX HomePage
        | SheetName   |  TestCaseID                  |
        | NitroXBots  | QA_TestCase_Auto_NitroX_024 |
 
-  @NitroXBotEdit
+  @NitroXBot
   Scenario Outline: <TestCaseID>_Start Execution_Bot for Sell Order
     Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
     When Choose Mode, Trading Account, Base and Quote Currency
+    And Pause all the Bots
     And Verify total Bots Before starting Sell execution
     And Start Bot ,Select the Service,Method and Input Bot Quantity
     And Select Sell Order and Select the MinTime and MaxTime Break
@@ -55,7 +56,7 @@ Feature: Test Bots features on NitroX HomePage
       | SheetName  |  TestCaseID               |
       | NitroXBots  | QA_TestCase_Auto_NitroX_026 |
 
-  @NitroXBotEdit
+  @NitroXBot
   Scenario Outline: <TestCaseID>_Start New SNIPER_BOT for Sell Order
     Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
     When Choose Mode, Trading Account, Base and Quote Currency
@@ -75,6 +76,7 @@ Feature: Test Bots features on NitroX HomePage
   Scenario Outline: <TestCaseID>_Start New Twap_BOT For Buy and Sell Order
     Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
     When Choose Mode, Trading Account, Base and Quote Currency
+    And Pause all the Bots
     And Verify total Bots before starting the Twap_Bot execution
     And Click start Bot and select the Service,Method and Choose Bot Quantity
     And Choose Side,Quantity,and Duration
