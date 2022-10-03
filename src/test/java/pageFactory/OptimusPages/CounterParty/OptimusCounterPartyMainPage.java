@@ -16,5 +16,5 @@ public class OptimusCounterPartyMainPage {
     public static By relatedParties_NewRelatedPartyTab = By.xpath("//div[@class='ant-tabs-nav-list']/div/div[@class='ant-tabs-tab-btn']/span[contains(text(),'New Related Party')]");
 
     public static By counterPartyMain_Services = By.xpath("//span[@aria-label='solution']//parent::li");
-    public static By counterPartyMain_References = By.xpath("//span[@aria-label='setting']//parent::li");
+
 }

@@ -1,4 +1,4 @@
-Feature: Test CounterParty feature
+Feature: Test Account feature
 
   Background: Login to Optimus
     Given Login to Optimus with Valid Credentials
@@ -307,13 +307,12 @@ Feature: Test CounterParty feature
 #    And Open Account main tab
 #    And Open Configurations side tab in Accounts
 #    And open Recording Accounts tab in Configurations under Accounts
-#    And Search for Existing Recording Account in List
-#    And Delete the Searched Recording Account in List
-#    Then Verify Success Message on Create and Update Page
+#    And Add
 #
 #    Examples:
 #      | TestCaseID                     | SheetName    |
 #      | QA_TestCase_Auto_Optimus_6_3_1 | NitroAccount |
+#      | QA_TestCase_Auto_Optimus_6_3_2 | NitroAccount |
 
 
   @OptimusAccount

@@ -72,4 +72,29 @@ public class NitroXHomePage {
     public static By bottomRightNotifText = By.xpath("//div[@class='ant-notification-notice-message']/div[@class='whitespace-pre-line']");
     public static By bottomRightNotifDesc = By.xpath("//div[@class='ant-notification-notice-description']/div[@class='whitespace-pre-line']");
     public static By closeBottomRightNotif = By.xpath("//span[@class='ant-notification-close-x']");
+
+    public static By OTCPricebtn = By.xpath("//span[text()='OTC Price']");
+
+    public static By OTCPriceWindow = By.xpath("//div[text()='OTC Price Calculator']");
+    public static By OTCquantity=By.id("otc_price_form_quantity");
+    public static By OTCDeliverytime=By.id("otc_price_form_delivery_time");
+    public static By OTCParticipation=By.id("otc_price_form_participation_percentage");
+    public static By OTCAdverseClient=By.id("otc_price_form_adverse_client");
+    public static By OTCSpread=By.id("otc_price_form_added_spread");
+
+    public static By OTCSpriceCalculate=By.xpath("//span[text()='Calculate']");
+
+    public static By OTCpriceReference=By.xpath("//span[text()='N/A']");
+
+    public static String OTCpriceReferencenew="//*[@id='otc_price_form_ref_mode']/label[%s]";
+
+    public static String reference_List_Edit_SearchIndex = "(//tbody/tr[2]/td[1]/div[1]/a)[%s]";
+    public static By OTCQuotebtn=By.xpath("//span[text()='Quote']");
+
+    public static String OTCRefcoin="//*[@id='otc_price_form_ref_coin']/label[%s]";
+    public static By OTCaskbidprice=By.xpath("//div[text()='Ask']//following::div[1]");
+    public static By OTCTimedate=By.xpath("//div[text()='Time']");
+
+    public static By OTCRefrange=By.id("otc_price_form_ref_exchange");
+
 }

@@ -479,6 +479,12 @@ public class OptimusInstrumentActions extends KeywordUtil {
         delay(90000);
     }
 
+    public static void clickReloadNoDelay() throws InterruptedException {
+        click(InstrumentMainPage.instrumentTokenPrices_Reload_List, "Clicking Reload");
+        XAlphaDealEnquiryActions.waitForLoadingIconToAppearAndDisappear();
+//        delay(2000);
+    }
+
     public static String get_Base_TokenPriceSearchList() throws InterruptedException {
 //        delay(30000);
         waitForVisible(InstrumentMainPage.instrumentTokenPrices_Quote_List);
@@ -802,6 +808,61 @@ public class OptimusInstrumentActions extends KeywordUtil {
         waitForVisible(InstrumentMainPage.instrument_ManualPrices_Date_List);
         return getElementText(InstrumentMainPage.instrument_ManualPrices_Date_List);
     }
+
+    public static void click_instrument_ManualPrices_Create() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create);
+        click(InstrumentMainPage.instrument_ManualPrices_Create, "Click to Open Create Manual Prices Window");
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Modal);
+    }
+    public static void click_instrument_ManualPrices_Edit() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Edit);
+        click(InstrumentMainPage.instrument_ManualPrices_Edit, "Click to Open Edit Manual Prices Window");
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Modal);
+    }
+
+    public static void click_instrument_ManualPrices_Delete() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Delete);
+        click(InstrumentMainPage.instrument_ManualPrices_Delete, "Click to Delete record button");
+    }
+    public static void instrument_ManualPrices_Create_Base(String item) throws InterruptedException {
+            waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Base);
+            hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Create_Base);
+            clearInputUsingKeys(InstrumentMainPage.instrument_ManualPrices_Create_Base);
+            inputText(InstrumentMainPage.instrument_ManualPrices_Create_Base, item,"Input Base =" + item);
+            pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Base);
+    }
+
+    public static void instrument_ManualPrices_Create_Quote (String item) throws InterruptedException {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
+        hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
+        inputText(InstrumentMainPage.instrument_ManualPrices_Create_Quote, item,"Input Quote =" + item);
+        pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
+    }
+
+    public static void instrument_ManualPrices_Create_Date(String item) throws InterruptedException {
+////        clearInputUsingKeys(InstrumentMainPage.instrument_ManualPrices_Create_Date);
+//        inputText(InstrumentMainPage.instrument_ManualPrices_Create_Date, item, "Input Date =" + item);
+            waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Date);
+            hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Create_Date);
+            inputText(InstrumentMainPage.instrument_ManualPrices_Create_Date, item,"Enter  date in Manual Prices");
+            pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Date);
+    }
+
+    public static void instrument_ManualPrices_Create_Price (String item) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_ManualPrices_Create_Price);
+        inputText(InstrumentMainPage.instrument_ManualPrices_Create_Price, item, "Input Price =" + item);
+    }
+
+    public static void click_Instrument_ManualPrices_Create_OK() {
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_OK);
+        click(InstrumentMainPage.instrument_ManualPrices_Create_OK, "Click OK Manual Prices modal");
+        waitForVisible(InstrumentMainPage.instrument_ManualPrices_Edit);
+    }
+
+
+
+
+
 
 
 }

@@ -240,9 +240,23 @@ public class KeywordUtil extends GlobalUtil {
      */
     public static void pageRefresh() {
         getDriver().navigate().refresh();
+
     }
 
-    /**
+
+    /*
+    *
+     * Hard Refresh
+     *
+     * @param Elementlocator the locator
+     */
+    public static void hardRefresh() {
+        Actions act = new Actions(getDriver());
+        act.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).sendKeys(Keys.F5).keyUp(Keys.SHIFT).keyUp(Keys.CONTROL).build().perform();
+    }
+
+    /*
+    *
      * Wait for clickable mobile web element.
      *
      * @param locator the locator
