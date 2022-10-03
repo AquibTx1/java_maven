@@ -173,6 +173,27 @@ public class InstrumentMainPage {
     public static By instrument_ManualPrices_Price_List = By.xpath("//tbody/tr[2]/td[4]");
     public static By instrument_ManualPrices_Date_List = By.xpath("//tbody/tr[2]/td[5]");
 
+//    Create
+    public static By instrument_ManualPrices_Create = By.xpath("//button[@type='button']/span[@class='anticon anticon-plus']");
+
+    public static By instrument_ManualPrices_Edit = By.xpath("//tbody/tr[2]/td[1]/button/span[@class='anticon anticon-edit']");
+    public static By instrument_ManualPrices_Delete = By.xpath("//tbody/tr[2]/td/button/span[@aria-label='delete']");
+    public static By instrument_ManualPrices_Create_Modal = By.className("ant-modal-content");
+
+
+    public static By instrument_ManualPrices_Create_Base = By.xpath("//div[@class='ant-modal-body']/form/div/div/div/div[2]/..//input[@id='base']");
+
+    public static By instrument_ManualPrices_Create_Quote = By.xpath("//input[@id='quote']");
+    public static By instrument_ManualPrices_Create_Date = By.xpath("//input[@id='date']");
+    public static By instrument_ManualPrices_Create_Price = By.xpath("//input[@id='price']");
+    public static By instrument_ManualPrices_Create_OK = By.xpath("//button/span[text()='OK']");
+
+
+
+
+
+
+
 
 
 

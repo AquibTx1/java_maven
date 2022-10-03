@@ -2,6 +2,7 @@ package step_definitions.Optimus.Instrument;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import modules.OptimusActions.OptimusAccountActions;
 import modules.OptimusActions.OptimusInstrumentActions;
 import modules.OptimusActions.OptimusSettlementActions;
 import org.testng.Assert;
@@ -1723,7 +1724,7 @@ public class OptimusInstrumentSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                OptimusInstrumentActions.instrument_ManualPrices_Base_Search(dataMap.get("Search"));
+                OptimusInstrumentActions.instrument_ManualPrices_Base_Search(dataMap.get("Manual_Base"));
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -1742,7 +1743,7 @@ public class OptimusInstrumentSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                OptimusInstrumentActions.instrument_ManualPrices_Quote_Search(dataMap.get("Search"));
+                OptimusInstrumentActions.instrument_ManualPrices_Quote_Search(dataMap.get("Manual_Quote"));
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -1761,7 +1762,7 @@ public class OptimusInstrumentSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                Assert.assertEquals(OptimusInstrumentActions.get_instrument_ManualPrices_Base_List(), (dataMap.get("Search")));
+                Assert.assertEquals(OptimusInstrumentActions.get_instrument_ManualPrices_Base_List(), (dataMap.get("Manual_Base")));
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -1780,7 +1781,7 @@ public class OptimusInstrumentSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                Assert.assertEquals(OptimusInstrumentActions.get_instrument_ManualPrices_Date_List(), (dataMap.get("Quote")));
+                Assert.assertEquals(OptimusInstrumentActions.get_instrument_ManualPrices_Quote_List(), (dataMap.get("Manual_Quote")));
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -1820,6 +1821,142 @@ public class OptimusInstrumentSteps {
         } else {
             try {
                 Assert.assertEquals(OptimusInstrumentActions.get_instrument_ManualPrices_Date_List(), (dataMap.get("Result")));
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click Create Manual Price button")
+    public void clickCreateManualPriceButton() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_instrument_ManualPrices_Create();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Fill the details of Manual Prices")
+    public void fillTheDetailsOfManualPrices() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.instrument_ManualPrices_Create_Base(dataMap.get("Manual_Base"));
+                OptimusInstrumentActions.instrument_ManualPrices_Create_Quote(dataMap.get("Manual_Quote"));
+                OptimusInstrumentActions.instrument_ManualPrices_Create_Date(dataMap.get("Search"));
+                OptimusInstrumentActions.instrument_ManualPrices_Create_Price(dataMap.get("Manual_Price"));
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click OK to Save")
+    public void clickOKToSave() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_Instrument_ManualPrices_Create_OK();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Click Edit Manual Price button in List")
+    public void clickEditManualPriceButtonInList() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_instrument_ManualPrices_Edit();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @Then("Delete and Verify the Record Deleted")
+    public void deleteAndVerifyTheRecordDeleted() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_instrument_ManualPrices_Delete();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @Then("Click Reset button in Manual Price Instrument")
+    public void clickResetButtonInManualPriceInstrument() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.click_instrument_ManualPrices_Reset_Search();
+            } catch (Throwable e) {
+                GlobalUtil.e = e;
+                GlobalUtil.errorMsg = e.getMessage();
+                Assert.fail(e.getMessage());
+            }
+            //increase the step counter by 1
+            if (BaseStepDefinitions.getSITflag()) {
+                BaseStepDefinitions.increaseCounter();
+            }
+        }
+    }
+
+    @And("Reload the Manual Price List")
+    public void reloadTheManualPriceList() {
+        if (BaseStepDefinitions.checkSkipExecutionFlags()) {
+            BaseStepDefinitions.skipThisStep();
+        } else {
+            try {
+                OptimusInstrumentActions.clickReloadNoDelay();
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();

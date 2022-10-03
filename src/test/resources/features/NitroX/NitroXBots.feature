@@ -110,6 +110,7 @@ Feature: Test Bots features on NitroX HomePage
      | NitroXBots  | QA_TestCase_Auto_NitroX_032 |
       | NitroXBots  | QA_TestCase_Auto_NitroX_033 |
 
+
   @NitroXBot
   Scenario Outline: <TestCaseID>_Pause Existing Running Execution_Bot for Buy Order-SpotMode
     Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
@@ -563,3 +564,84 @@ Feature: Test Bots features on NitroX HomePage
       | SheetName   |  TestCaseID                  |
       | NitroXBots  | QA_TestCase_Auto_NitroX_023 |
 
+  @NitroXParticipationBot
+  Scenario Outline: <TestCaseID>_Start Participation_Bot for Buy Order
+    Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
+    When Choose Mode, Trading Account, Base and Quote Currency
+    And Pause all the Bots
+    And Verify total Bots Before staring the Buy execution
+    And Click Start Bot ,Select the Service,Method and Input Bot Quantity
+    And Input Side,Quantity and Stop and Triger condition
+    And submit the order
+    Then Verify Bot Count in Total Filtered
+    And Click total filtered bots and click the detail bot
+#    Then Verify new Bot in detail and config
+#    Then Verify the Buy Order in Dealt Order
+    Examples:
+      | SheetName   |  TestCaseID                 |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_124 |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_125 |
+
+
+  @NitroXParticipationBot
+  Scenario Outline: <TestCaseID>_Edit Participation_Bot for Buy Order
+    Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
+    When Choose Mode, Trading Account, Base and Quote Currency
+    And Pause all the Bots
+    And Verify total Bots Before staring the Buy execution
+    And Click Start Bot ,Select the Service,Method and Input Bot Quantity
+    And Input Side,Quantity and Stop and Triger condition
+    And submit the order
+    Then Verify Bot Count in Total Filtered
+    And Pause the Bot
+    And Edit the Participation Bot fields
+    Then Verify the Bot is updated
+    Then Verify updated fields in config
+#    Then Verify new Bot in detail and config
+#    Then Verify the Buy Order in Dealt Order
+    Examples:
+      | SheetName   |  TestCaseID                  |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_128 |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_129 |
+
+  @NitroXParticipationBot
+  Scenario Outline: <TestCaseID>_Duplicate the Participation_Bot for Buy Order
+    Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
+    When Choose Mode, Trading Account, Base and Quote Currency
+    And Stop All the Bots on Homepage
+    And wait for Ten Seconds
+    And Verify total Bots Before staring the Buy execution
+    And Click Start Bot ,Select the Service,Method and Input Bot Quantity
+    And Input Side,Quantity and Stop and Triger condition
+    And submit the order
+    Then Verify Bot Count in Total Filtered
+    And Click total filtered bots and click the latest running bot and create duplicate Bot
+    And Input any value for Participation Bot
+    And submit the order
+    Then Verify duplicate bot is created
+    Then Verify config tab for Participation bot
+
+    Examples:
+      | SheetName  |  TestCaseID                  |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_130 |
+
+  @NitroXParticipationBot
+  Scenario Outline: <TestCaseID>_Edit Participation_Bot for Buy Order
+    Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
+    When Choose Mode, Trading Account, Base and Quote Currency
+    And Pause all the Bots
+    And Verify total Bots Before staring the Buy execution
+    And Click Start Bot ,Select the Service,Method and Input Bot Quantity
+    And Input Side,Quantity and Stop and Triger condition
+    And submit the order
+    Then Verify Bot Count in Total Filtered
+    And Pause the Bot
+    And Edit the Participation Bot fields
+    Then Verify the Bot is updated
+    Then Verify updated fields in config
+#    Then Verify new Bot in detail and config
+#    Then Verify the Buy Order in Dealt Order
+    Examples:
+      | SheetName   |  TestCaseID                  |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_128 |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_129 |

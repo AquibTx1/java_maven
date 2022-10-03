@@ -535,12 +535,59 @@ Feature: Test Instrument feature
       | QA_TestCase_Auto_Optimus_5_7_3_5 | InstrumentPriceAlert |
 
   @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Create New Manual Prices from list under Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Click Create Manual Price button
+    And Fill the details of Manual Prices
+    And Click OK to Save
+    And Select Base from Search Dropdown in Manual Prices
+    And Select Quote from Search Dropdown in Manual Prices
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the Manual Price List
+    Then Verify Base in Search Results of Existing Manual Prices
+    Then Verify Quote in Search Results of Existing Manual Prices
+    Then Verify DateTime in Search Results of Existing Manual Prices
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_5 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Create Edit Manual Prices from list under Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Base from Search Dropdown in Manual Prices
+    And Select Quote from Search Dropdown in Manual Prices
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the Manual Price List
+    Then Verify Base in Search Results of Existing Manual Prices
+    Then Verify Quote in Search Results of Existing Manual Prices
+    Then Verify DateTime in Search Results of Existing Manual Prices
+    And Click Edit Manual Price button in List
+    And Fill the details of Manual Prices
+    And Click OK to Save
+    And Select Base from Search Dropdown in Manual Prices
+    And Select Quote from Search Dropdown in Manual Prices
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the Manual Price List
+    Then Verify Base in Search Results of Existing Manual Prices
+    Then Verify Quote in Search Results of Existing Manual Prices
+    Then Verify DateTime in Search Results of Existing Manual Prices
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_6 | InstrumentPriceAlert |
+
+  @OptimusInstrument
   Scenario Outline: "<TestCaseID>" Able to Search the Base in Existing Manual Prices from list of Instrument
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open the Instrument Tab
     And Open Manual Price Side Tab Under Instrument
     And Select Base from Search Dropdown in Manual Prices
-    And Reload the List
+    And Reload the Manual Price List
     Then Verify Base in Search Results of Existing Manual Prices
     Examples:
       | TestCaseID                     | SheetName            |
@@ -552,7 +599,7 @@ Feature: Test Instrument feature
     And Open the Instrument Tab
     And Open Manual Price Side Tab Under Instrument
     And Select Quote from Search Dropdown in Manual Prices
-    And Reload the List
+    And Reload the Manual Price List
     Then Verify Quote in Search Results of Existing Manual Prices
 
     Examples:
@@ -565,10 +612,41 @@ Feature: Test Instrument feature
     And Open the Instrument Tab
     And Open Manual Price Side Tab Under Instrument
     And Select Date from Search Dropdown in Manual Prices
-    And Reload the List
+    And Reload the Manual Price List
     Then Verify DateTime in Search Results of Existing Manual Prices
 
     Examples:
       | TestCaseID                     | SheetName            |
       | QA_TestCase_Auto_Optimus_5_5_3 | InstrumentPriceAlert |
       | QA_TestCase_Auto_Optimus_5_5_4 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Delete Manual Prices from list under Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Base from Search Dropdown in Manual Prices
+    And Select Quote from Search Dropdown in Manual Prices
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the Manual Price List
+    Then Delete and Verify the Record Deleted
+    Then Reload the List
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_7 | InstrumentPriceAlert |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Reset Search in Manual Prices from list under Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Manual Price Side Tab Under Instrument
+    And Select Base from Search Dropdown in Manual Prices
+    And Select Quote from Search Dropdown in Manual Prices
+    And Select Date from Search Dropdown in Manual Prices
+    And Reload the Manual Price List
+    Then Click Reset button in Manual Price Instrument
+
+    Examples:
+      | TestCaseID                     | SheetName            |
+      | QA_TestCase_Auto_Optimus_5_5_8 | InstrumentPriceAlert |

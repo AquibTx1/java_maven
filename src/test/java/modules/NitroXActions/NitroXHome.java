@@ -15,6 +15,7 @@ import static utilities.KeywordUtil.waitForVisible;
 
 public class NitroXHome {
 
+
     static Class thisClass = NitroXHome.class;
 
     static String availableCoinBalance, frozenCoinBalance, totalCoinBalance, firstbidprice, lastbidprice, firstaskprice,
@@ -73,16 +74,15 @@ public class NitroXHome {
         click(NitroXHomePage.Quotecurrency, "Click Quote Currency");
         KeywordUtil.clearInputUsingKeys(NitroXHomePage.Quotecurrency);
     }
-
-
     public static void selectQuoteCurrency(HashMap<String, String> dataMap) throws Exception {
         click(NitroXHomePage.Quotecurrency, "Click Quote Currency");
         KeywordUtil.inputText(NitroXHomePage.Quotecurrency, dataMap.get("Quote"), dataMap.get("Quote") + " : Quote Currency");
     }
-
     public static void waitForLiveChart() {
         waitForPresent(NitroXHomePage.liveFrame);
     }
+
+
 
     public String getBaseCurrency() {
         return getElementText(NitroXHomePage.Basecurrency);
@@ -408,19 +408,67 @@ public class NitroXHome {
     public static boolean isPresentOrderListener() {
         return isWebElementPresent(NitroXHomePage.orderBookListener, "Orderbook listener notification is present");
     }
-
-
-
     public static void closeBottomRightNotif() {
         click(NitroXHomePage.closeBottomRightNotif, "Bottom right notification closed.");
     }
-
     public static void waitForOrderListernerToDisappear() {
         waitForInVisibile(NitroXHomePage.orderBookListener);
     }
 
     public static boolean isBotPresent() {
         return isWebElementPresent(NitroXBotsPage.botlist, "Bots are available");
+    }
+
+    public static void selectOTCPrice() {
+        click(NitroXHomePage.OTCPricebtn, "Clicked OTC Price Button.");
+        LogUtil.infoLog(thisClass, "OTC Price Button Selected");
+    }
+
+    public static void inputOTCPriceQuantity() throws InterruptedException {
+        clearInputUsingKeys(NitroXHomePage.OTCquantity);
+        KeywordUtil.inputText(NitroXHomePage.OTCquantity,"10", "Quantity entered");
+    }
+
+    public static void inputOTCPriceTime() throws InterruptedException {
+        clearInputUsingKeys(NitroXHomePage.OTCDeliverytime);
+        KeywordUtil.inputText(NitroXHomePage.OTCDeliverytime,"20", "Delivery Time entered");
+    }
+
+    public static void selectCalculate() {
+        click(NitroXHomePage.OTCSpriceCalculate,"Clicked on Calculate Button");
+    }
+
+    public static void inputOTCPriceParticipation() throws InterruptedException {
+        clearInputUsingKeys(NitroXHomePage.OTCParticipation);
+        KeywordUtil.inputText(NitroXHomePage.OTCParticipation,"30", "ParticiPation value entered");
+    }
+
+    public static void selectRefrence() {
+        click(NitroXHomePage.OTCpriceReference,"Clicked on Calculate Button");
+    }
+
+    public static void click_Reference(String searchIndex) throws InterruptedException {
+        click(By.xpath(String.format(NitroXHomePage.OTCpriceReferencenew, searchIndex)), "Clicked Reference");
+        LogUtil.infoLog(thisClass, "Reference Selected ");
+    }
+
+    public static void validateOTCPrice() {
+        isWebElementPresent(NitroXHomePage.OTCaskbidprice,"Ask Bid Price Values");
+        String askprice=getElementText(NitroXHomePage.OTCaskbidprice);
+        LogUtil.infoLog(thisClass, "Ask/Bid Price displayed ="+askprice);
+    }
+
+    public static void selectQuote(String searchIndex) {
+        click(By.xpath(String.format(NitroXHomePage.OTCRefcoin, searchIndex)), "Clicked Reference Coin");
+        LogUtil.infoLog(thisClass, "Quote is Selected ");
+            //click(NitroXHomePage.OTCQuotebtn,"Clicked on Quote Button");
+    }
+
+
+    public static void selectRefRange(HashMap<String,String> dataMap) {
+        waitForVisible(NitroXHomePage.OTCRefrange);
+        KeywordUtil.inputText(NitroXHomePage.OTCRefrange, dataMap.get("Range"), "Range Entered.");
+        KeywordUtil.pressEnter(NitroXHomePage.OTCRefrange);
     }
 
 
