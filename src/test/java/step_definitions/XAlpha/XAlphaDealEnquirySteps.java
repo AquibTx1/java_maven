@@ -1100,6 +1100,7 @@ public class XAlphaDealEnquirySteps {
                 XAlphaDealEnquiryActions.inputDealRefid_TradeDocuments(XAlphaDealInputSteps.dealRefId);
                 XAlphaDealEnquiryActions.clickLoadDealBtnTradeDocument();
                 XAlphaDealEnquiryActions.waitForSuccessMsgToAppear();
+                delay(5000);
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 e.printStackTrace();
