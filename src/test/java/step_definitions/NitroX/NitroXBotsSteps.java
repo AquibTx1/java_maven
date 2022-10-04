@@ -1367,7 +1367,7 @@ public class NitroXBotsSteps {
                 waitForVisible(NitroXBotsPage.totalfilered);
                 NitroXBotsAction.selecttotalBots();
                 waitForVisible(NitroXBotsPage.BotTime);
-                delay(15000);
+                delay(30000);
                 NitroXBotsAction.sortStartTime();
                 NitroXBotsAction.selectLatestBotName();
             } catch (Throwable e) {
