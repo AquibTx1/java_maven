@@ -1052,3 +1052,23 @@ Feature: Test Bots features on NitroX HomePage
     Examples:
       | SheetName  |  TestCaseID                  |
       | NitroXBots  | QA_TestCase_Auto_NitroX_133 |
+
+  @NitroXParticipationBot
+  Scenario Outline: <TestCaseID>_Duplicate the Future Participation_Bot for Buy/Sell Order
+    Given Read "NitroX" and "<SheetName>" and "<TestCaseID>" from test data
+    When Choose Mode, Trading Account and Instrument
+    And Pause all the Bots
+    And Click Start Bot ,Select the Service,Method and Input Bot Quantity
+    And Input Side,Quantity and Stop and Triger condition
+    And submit the order
+    And Wait for sometime to get the Bots Updated
+    And Logout and again login & select Mode,Trading account
+    And Click total filtered bots and click the latest running bot and create duplicate Bot
+    And Input any value for Participation Bot
+    And submit the order
+    Then Verify duplicate bot is created
+    Then Verify config tab for Participation bot
+
+    Examples:
+      | SheetName  |  TestCaseID                  |
+      | NitroXBots  | QA_TestCase_Auto_NitroX_139 |

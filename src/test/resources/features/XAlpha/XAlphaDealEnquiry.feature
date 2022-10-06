@@ -107,7 +107,7 @@ Feature: Test deal enquiry feature
       | SheetName   | TestCaseID                  | loginCredentials  | FromStatus | ToStatus  |
       | XAlphaDeals | QA_TestCase_Auto_XAlpha_016 | MO_CheckerAccount | Settled    | Processed |
       | XAlphaDeals | QA_TestCase_Auto_XAlpha_017 | MO_CheckerAccount | Processed  | Confirmed |
-      | XAlphaDeals | QA_TestCase_Auto_XAlpha_018 | MO_CheckerAccount | Settled    | Confirmed |
+#      | XAlphaDeals | QA_TestCase_Auto_XAlpha_018 | MO_CheckerAccount | Settled    | Confirmed |
       | XAlphaDeals | QA_TestCase_Auto_XAlpha_021 | MO_CheckerAccount | Processed  | Pending   |
       | XAlphaDeals | QA_TestCase_Auto_XAlpha_022 | MO_CheckerAccount | Settled    | Pending   |
       | XAlphaDeals | QA_TestCase_Auto_XAlpha_028 | MO_CheckerAccount | Processed  | Cancelled |
