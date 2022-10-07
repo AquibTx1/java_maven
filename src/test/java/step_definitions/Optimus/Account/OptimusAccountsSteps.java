@@ -186,7 +186,7 @@ public class OptimusAccountsSteps {
                 OptimusAccountActions.account_Entity(dataMap.get("Entity"));
                 OptimusAccountActions.account_WalletController(dataMap.get("WalletController"));
                 OptimusAccountActions.account_PortfolioNumber(dataMap.get("PortfolioNumber"));
-                OptimusAccountActions.account_CounterpartyRef(dataMap.get("CounterpartyRef"));
+//                OptimusAccountActions.account_CounterpartyRef(dataMap.get("CounterpartyRef"));
 
             } catch (Throwable e) {
                 GlobalUtil.e = e;
@@ -352,7 +352,7 @@ public class OptimusAccountsSteps {
                 OptimusAccountActions.account_Entity_update(dataMap.get("Entity"));
                 OptimusAccountActions.account_WalletController_update(dataMap.get("WalletController"));
                 OptimusAccountActions.account_PortfolioNumber_update(dataMap.get("PortfolioNumber"));
-                OptimusAccountActions.account_CounterpartyRef_update(dataMap.get("CounterpartyRef"));
+//                OptimusAccountActions.account_CounterpartyRef_update(dataMap.get("CounterpartyRef"));
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -371,7 +371,8 @@ public class OptimusAccountsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                OptimusMainActions.searchTasks(accID);
+//                OptimusMainActions.searchTasks(accID);  // For debugging purpose
+                OptimusMainActions.searchTasks(accName);
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
@@ -390,7 +391,8 @@ public class OptimusAccountsSteps {
             BaseStepDefinitions.skipThisStep();
         } else {
             try {
-                OptimusMainActions.searchForItem(accID);
+//                OptimusMainActions.searchForItem(accID); //for debuggng
+                OptimusMainActions.searchForItem(accName);
             } catch (Throwable e) {
                 GlobalUtil.e = e;
                 GlobalUtil.errorMsg = e.getMessage();
