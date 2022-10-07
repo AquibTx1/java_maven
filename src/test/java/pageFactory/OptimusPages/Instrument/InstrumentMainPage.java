@@ -189,6 +189,33 @@ public class InstrumentMainPage {
     public static By instrument_ManualPrices_Create_OK = By.xpath("//button/span[text()='OK']");
 
 
+//OPTION INSTRUMENTS TAB
+
+    public static By instrument_OptionInstrumentTab = By.xpath("//a[text()='Option Instruments']");
+
+    public static By instrument_NewOptionTradingInstrument = By.xpath("//span[text()='New Option Trading Instrument']");
+    public static By instrument_OptionInstruments_InstrumentName = By.id("instrument_name");
+
+    public static By instrument_OptionInstruments_OptionType = By.id("option_type");
+
+    public static String instrument_OptionInstruments_OptionType_Options= "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
+    public static By instrument_OptionInstruments_Strike = By.id("strike");
+    public static By instrument_OptionInstruments_StrikeType = By.id("strike_type");
+    public static String instrument_OptionInstruments_StrikeType_Options= "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
+    public static By instrument_OptionInstruments_Notional = By.id("notional");
+    public static By instrument_OptionInstruments_NotionalType= By.id("notional_type");
+    public static String instrument_OptionInstruments_NotionalType_Options= "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
+    public static By instrument_OptionInstruments_Expiry = By.id("expiry_moment");
+    public static By instrument_OptionInstruments_Expiryhour= By.id("expiry_hour_utc");
+    public static By instrument_OptionInstruments_ManualBidVol= By.id("manual_bid_vol");
+    public static By instrument_OptionInstruments_ManualOfferVol = By.id("manual_offer_vol");
+    public static By instrument_OptionInstruments_ManualSpot= By.id("manual_spot_px");
+    public static By instrument_OptionInstruments_DriftVol= By.id("drift_vol");
+    public static By instrument_OptionInstruments_Symbol = By.id("symbol");
+    public static String instrument_OptionInstruments_Symbol_Options= "//div[@class='rc-virtual-list-holder-inner']//div[text()='%s']";
+    public static By instrument_OptionInstruments_Structure= By.id("structure");
+    public static By instrument_OptionInstruments_Spreadpctbid = By.id("spread_pct_bid");
+    public static By instrument_OptionInstruments_Spreadoffer= By.id("spread_pct_offer");
 
 
 

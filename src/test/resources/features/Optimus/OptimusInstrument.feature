@@ -650,3 +650,93 @@ Feature: Test Instrument feature
     Examples:
       | TestCaseID                     | SheetName            |
       | QA_TestCase_Auto_Optimus_5_5_8 | InstrumentPriceAlert |
+
+#    <---------------------------OPTIONS INSTRUMENTS---------------------------------------->
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to create Option Instruments
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Click New Option Trading Instrument
+    And Input Instrument Name,Option Type,Strike ,Notional
+    And Input Expiry date ,Expiry hour,Manual bid ,Manual Offer vol
+    And Input Symbol,Structure ,Spread Offer
+    And Click Create Instrument
+        #Login Again with MO Account
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open the Instrument Tab
+    And Click Tasks link
+    And Navigate to Instrument Task
+    And Input the Asset and click Search
+    And Approve the Asset created
+    And Logout from MO Account
+      #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Search for approved Task
+    Then Verify the Task Approved
+
+
+    Examples:
+      | TestCaseID                     | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_5_9_1 | OptionInstruments | MO_CheckerAccount |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Login and Update the Created Instrument
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Input the Record to update
+    And Edit the Existing fields
+    And Update existing Instrument fields
+    #Login Again with MO Account
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open the Instrument Tab
+    And Click Tasks link
+    And Navigate to Instrument Task
+    And Input the Asset and click Search
+    And Approve the Asset created
+    And Logout from MO Account
+       #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Search for approved Task
+    Then Verify the Task Approved
+
+    Examples:
+      | TestCaseID                     | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_5_9_2 | OptionInstruments | MO_CheckerAccount |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Search a record the from the Instrument List
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Input the Record to update
+    Then Verify the Task Approved
+
+    Examples:
+      | TestCaseID                     | SheetName  | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_5_9_3 | OptionInstruments | MO_CheckerAccount |
+
+  @OptimusInstrument
+  Scenario Outline: "<TestCaseID>" Able to Download list from Portfolio
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open the Instrument Tab
+    And Open Option Instruments Under Instrument
+    And Click the download csv
+    Then Verify the File downloaded CSV Button
+    Examples:
+      | TestCaseID                     | SheetName  | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_5_9_4 | OptionInstruments | MO_CheckerAccount |

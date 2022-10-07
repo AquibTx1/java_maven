@@ -150,7 +150,8 @@ public class OptimusSettlementActions extends KeywordUtil {
         click(SettlementMainPage.logoutbtn_settlement, "Logout from Optimus app");
     }
 
-    public static void clickTaskslink() {
+    public static void clickTaskslink() throws InterruptedException {
+        delay(10000);
         click(SettlementMainPage.newSettlement_Tasks, "Clicked the Task Link");
     }
 
