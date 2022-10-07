@@ -2528,7 +2528,7 @@ public class NitroXBotsSteps {
         } else {
             try {
                 NitroXBotsAction.selectConfig();
-                Assert.assertEquals(Double.toString(NitroXBotsAction.getThresholdPrice()),"2.0");
+                Assert.assertEquals(NitroXBotsAction.getBotDetailSide(),dataMap.get("Side"));
 
             } catch (Throwable e) {
                 GlobalUtil.e = e;

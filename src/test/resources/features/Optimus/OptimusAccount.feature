@@ -76,6 +76,19 @@ Feature: Test Account feature
 
 
   @OptimusAccount
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Search Existing Account
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open Account main tab
+    And Open Accounts side tab
+    And Open Accounts List tab
+    And Search for existing Account in List
+    Then Verify Search Results of Existing Accounts
+
+    Examples:
+      | TestCaseID                     | SheetName |
+      | QA_TestCase_Auto_Optimus_6_1_4 | Accounts  |
+
+  @OptimusAccount
   Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Delete Existing Account
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open Account main tab
@@ -110,18 +123,6 @@ Feature: Test Account feature
       | TestCaseID                     | SheetName | loginCredentials  |
       | QA_TestCase_Auto_Optimus_6_1_3 | Accounts  | MO_CheckerAccount |
 
-  @OptimusAccount
-  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Search Existing Account
-    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
-    And Open Account main tab
-    And Open Accounts side tab
-    And Open Accounts List tab
-    And Search for existing Account in List
-    Then Verify Search Results of Existing Accounts
-
-    Examples:
-      | TestCaseID                     | SheetName |
-      | QA_TestCase_Auto_Optimus_6_1_4 | Accounts  |
 
   @OptimusAccount
   Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Search Account and check Download button

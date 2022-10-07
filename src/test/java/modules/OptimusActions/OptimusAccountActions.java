@@ -111,7 +111,7 @@ public class OptimusAccountActions extends KeywordUtil {
     }
     public static String getAccountNameFromDetails() {
         waitForVisible(OptimusAccountCreatePage.account_AccountName);
-        return getElementText(OptimusAccountCreatePage.account_AccountName);
+        return getElementValueWithVisibility(OptimusAccountCreatePage.account_AccountName);
     }
     public static void account_AccountLogin(String account) throws InterruptedException {
         waitForClickable(OptimusAccountCreatePage.account_AccountLogin);
