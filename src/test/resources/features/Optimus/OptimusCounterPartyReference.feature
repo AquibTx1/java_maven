@@ -1625,8 +1625,141 @@ Feature: Test CounterParty feature
       | QA_TestCase_Auto_Optimus_2_4_12_3 | OptimusReferences | MO_CheckerAccount |
 
 
-       #  Counterparty Status Type Reference
-  @OptimusCounterPartyReference @debug
+       #  Counterparty Vouched Type Reference
+  @OptimusCounterPartyReference
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Create Counterparty Vouched Type Reference
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Open Create Reference Type Page
+    And Enter Detail fields of Reference Type
+    And Click Create Reference Type Button
+    Then Verify Success Message on Create and Update Page
+    #login with checker user and approve the CounterParty
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open CounterParty main tab
+    And Open CounterParty Tasks sub tab
+    And Open Reference Tasks Sub Tab
+    And Approve the Reference Task
+    Then Verify Success Message on Create and Update Page
+    And Logout from MO Account
+    #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Open Reference List tab
+    And Search For The "Created" Reference Results in List
+    Then verify Reference is "Created"
+
+    Examples:
+      | TestCaseID                        | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_2_4_13_1 | OptimusReferences | MO_CheckerAccount |
+
+
+  @OptimusCounterPartyReference
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Edit Counterparty Vouched Type Reference
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Search For The "Existing" Reference Results in List
+    And Click on Edit Link to Load References Details
+#    And Get Name from the Reference
+    And Update Detail fields of Reference Type
+    And Click Update Reference Type Button
+    Then Verify Success Message on Create and Update Page
+    #login with checker user and approve the CounterParty
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open CounterParty main tab
+    And Open CounterParty Tasks sub tab
+    And Open Reference Tasks Sub Tab
+    And Approve the Reference Task
+    Then Verify Success Message on Create and Update Page
+    And Logout from MO Account
+    #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Open Reference List tab
+    And Search For The "Updated" Reference Results in List
+    Then verify Reference is "Updated"
+
+    Examples:
+      | TestCaseID                        | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_2_4_13_2 | OptimusReferences | MO_CheckerAccount |
+
+
+  @OptimusCounterPartyReference
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Search Counterparty Vouched Type Reference
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Open Reference List tab
+    And Search For The "Existing" Reference Results in List
+    Then verify Reference is "Existing"
+
+    Examples:
+      | TestCaseID                        | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_2_4_13_4 | OptimusReferences | MO_CheckerAccount |
+
+  @OptimusCounterPartyReference
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Delete Counterparty Vouched Type Reference
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Search For The "Existing" Reference Results in List
+    And Click on Edit Link to Load References Details
+    And Get Name from the Reference Details
+    And Delete Reference Type From Details
+    Then Verify Success Message on Create and Update Page
+    #login with checker user and approve the CounterParty
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open CounterParty main tab
+    And Open CounterParty Tasks sub tab
+    And Open Reference Tasks Sub Tab
+    And Approve the Reference Task
+    Then Verify Success Message on Create and Update Page
+    And Logout from MO Account
+    #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Vouched Type" Reference Type Subtab
+    And Open Reference List tab
+    And Search For The "Deleted" Reference Results in List
+    Then verify Item is deleted and Not shown in Search Result
+
+    Examples:
+      | TestCaseID                        | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_2_4_13_3 | OptimusReferences | MO_CheckerAccount |
+
+
+#  Counterparty Status Type Reference
+  @OptimusCounterPartyReference
   Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Create Counterparty Status Type Reference
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open CounterParty main tab
@@ -1661,50 +1794,50 @@ Feature: Test CounterParty feature
 
     Examples:
       | TestCaseID                        | SheetName         | loginCredentials  |
-      | QA_TestCase_Auto_Optimus_2_4_13_1 | OptimusReferences | MO_CheckerAccount |
-
-#
-#  @OptimusCounterPartyReference @debug
-#  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Edit Counterparty Face2Face Vertification Type Reference
-#    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
-#    And Open CounterParty main tab
-#    And Open Reference side tab
-#    And Main Reference Search for Reference Type Tab
-#    And Open "Counterparty Face2Face Vertification Type" Reference Type Subtab
-#    And Search For The "Existing" Reference Results in List
-#    And Click on Edit Link to Load References Details
-##    And Get Name from the Reference
-#    And Update Detail fields of Reference Type
-#    And Click Update Reference Type Button
-#    Then Verify Success Message on Create and Update Page
-#    #login with checker user and approve the CounterParty
-#    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
-#    And Logout from Optimus
-#    And Input Optimus Username and Password
-#    And Click Optimus Login Button
-#    Then Verify user is able to login to Optimus successfully
-#    And Open CounterParty main tab
-#    And Open CounterParty Tasks sub tab
-#    And Open Reference Tasks Sub Tab
-#    And Approve the Reference Task
-#    Then Verify Success Message on Create and Update Page
-#    And Logout from MO Account
-#    #Login and Check the Approved record
-#    Given Login to Optimus with Valid Credentials
-#    And Open CounterParty main tab
-#    And Open Reference side tab
-#    And Main Reference Search for Reference Type Tab
-#    And Open "Counterparty Face2Face Vertification Type" Reference Type Subtab
-#    And Open Reference List tab
-#    And Search For The "Updated" Reference Results in List
-#    Then verify Reference is "Updated"
-#
-#    Examples:
-#      | TestCaseID                        | SheetName         | loginCredentials  |
-#      | QA_TestCase_Auto_Optimus_2_4_13_2 | OptimusReferences | MO_CheckerAccount |
+      | QA_TestCase_Auto_Optimus_2_4_14_1 | OptimusReferences | MO_CheckerAccount |
 
 
-  @OptimusCounterPartyReference @debug
+  @OptimusCounterPartyReference
+  Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Edit Counterparty Status Type Reference
+    Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Status Type" Reference Type Subtab
+    And Search For The "Existing" Reference Results in List
+    And Click on Edit Link to Load References Details
+#    And Get Name from the Reference
+    And Update Detail fields of Reference Type
+    And Click Update Reference Type Button
+    Then Verify Success Message on Create and Update Page
+    #login with checker user and approve the CounterParty
+    Given Read "Optimus" and "OptimusLogin" and "<loginCredentials>" from test data
+    And Logout from Optimus
+    And Input Optimus Username and Password
+    And Click Optimus Login Button
+    Then Verify user is able to login to Optimus successfully
+    And Open CounterParty main tab
+    And Open CounterParty Tasks sub tab
+    And Open Reference Tasks Sub Tab
+    And Approve the Reference Task
+    Then Verify Success Message on Create and Update Page
+    And Logout from MO Account
+    #Login and Check the Approved record
+    Given Login to Optimus with Valid Credentials
+    And Open CounterParty main tab
+    And Open Reference side tab
+    And Main Reference Search for Reference Type Tab
+    And Open "Counterparty Status Type" Reference Type Subtab
+    And Open Reference List tab
+    And Search For The "Updated" Reference Results in List
+    Then verify Reference is "Updated"
+
+    Examples:
+      | TestCaseID                        | SheetName         | loginCredentials  |
+      | QA_TestCase_Auto_Optimus_2_4_14_2 | OptimusReferences | MO_CheckerAccount |
+
+
+  @OptimusCounterPartyReference
   Scenario Outline: "<TestCaseID>" Able to Login to Optimus and Search Counterparty Status Type Reference
     Given Read "Optimus" and "<SheetName>" and "<TestCaseID>" from test data
     And Open CounterParty main tab
@@ -1717,4 +1850,4 @@ Feature: Test CounterParty feature
 
     Examples:
       | TestCaseID                        | SheetName         | loginCredentials  |
-      | QA_TestCase_Auto_Optimus_2_4_13_4 | OptimusReferences | MO_CheckerAccount |
+      | QA_TestCase_Auto_Optimus_2_4_14_4 | OptimusReferences | MO_CheckerAccount |

@@ -208,11 +208,13 @@ public class OptimusPortfolioCreateActions extends KeywordUtil {
         LogUtil.infoLog(thisClass,"name is ="+code);
         return  code;
     }
-    public static void deleteRecord() {
+    public static void deleteRecord() throws InterruptedException {
+        delay(2000);
             click(PortfolioMainPage.Portfolio_deleterecordbtn,"Clicked on the Delete Button");
             waitForVisible(SettlementUpdatePage.updatesettlement_yesdeletebtn);
+        delay(5000);
             click(SettlementUpdatePage.updatesettlement_yesdeletebtn,"clicked on Yes Button");
-
+        delay(2000);
     }
 
     public static void update_HeadofBusiness(String head) {

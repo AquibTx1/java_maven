@@ -88,7 +88,6 @@ Feature: Test Portfolio feature as mentioned in Test Case
     And Click CounterParty Tab
     And Logout from MO Account
 #    Login and Check the Approved record
-
     Given Login to Optimus with Valid Credentials
     And Click the Portfolio Tab
     Then Verify the Portfolio is deleted

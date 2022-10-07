@@ -112,4 +112,4 @@ Feature: Test Settlement feature
     Then Verify the File downloaded CSV Button
     Examples:
       | TestCaseID                      | SheetName |loginCredentials  |
-      | QA_TestCase_Auto_Optimus_3_1_4 | Settlement | MO_CheckerAccount|
+      | QA_TestCase_Auto_Optimus_3_1_5 | Settlement | MO_CheckerAccount|

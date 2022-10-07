@@ -107,6 +107,12 @@ public class OptimusInstrumentActions extends KeywordUtil {
         return Asset_code;
     }
 
+    public static String getInstrumentName() {
+        String i_name = getElementText(By.xpath("//span[text()='Instrument Ref']//following::tr[2]/td[3]"));
+        LogUtil.infoLog(thisClass, "Instrument name is =" + i_name);
+        return i_name;
+    }
+
     public static String getInstrumentRefid() {
         return getElementValueWithVisibility(InstrumentMainPage.refid);
     }
@@ -831,14 +837,12 @@ public class OptimusInstrumentActions extends KeywordUtil {
             inputText(InstrumentMainPage.instrument_ManualPrices_Create_Base, item,"Input Base =" + item);
             pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Base);
     }
-
     public static void instrument_ManualPrices_Create_Quote (String item) throws InterruptedException {
         waitForVisible(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
         hoverOnElementandClick(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
         inputText(InstrumentMainPage.instrument_ManualPrices_Create_Quote, item,"Input Quote =" + item);
         pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Quote);
     }
-
     public static void instrument_ManualPrices_Create_Date(String item) throws InterruptedException {
 ////        clearInputUsingKeys(InstrumentMainPage.instrument_ManualPrices_Create_Date);
 //        inputText(InstrumentMainPage.instrument_ManualPrices_Create_Date, item, "Input Date =" + item);
@@ -847,7 +851,6 @@ public class OptimusInstrumentActions extends KeywordUtil {
             inputText(InstrumentMainPage.instrument_ManualPrices_Create_Date, item,"Enter  date in Manual Prices");
             pressEnter(InstrumentMainPage.instrument_ManualPrices_Create_Date);
     }
-
     public static void instrument_ManualPrices_Create_Price (String item) throws InterruptedException {
         clearInputUsingKeys(InstrumentMainPage.instrument_ManualPrices_Create_Price);
         inputText(InstrumentMainPage.instrument_ManualPrices_Create_Price, item, "Input Price =" + item);
@@ -860,9 +863,69 @@ public class OptimusInstrumentActions extends KeywordUtil {
     }
 
 
+    public static void open_OptionInstrument() {
+        waitForVisible(InstrumentMainPage.instrument_OptionInstrumentTab);
+        click(InstrumentMainPage.instrument_OptionInstrumentTab, "Click to Open New Option");
+    }
 
+    public static void open_NewOptionTradingInstrument() {
+        waitForVisible(InstrumentMainPage.instrument_NewOptionTradingInstrument);
+        click(InstrumentMainPage.instrument_NewOptionTradingInstrument, "Click to Open New Option");
+    }
 
+    public static void input_InstrumentName(String instrument_name) {
+        inputText(InstrumentMainPage.instrument_OptionInstruments_InstrumentName, instrument_name, "Instrument Name is=" + instrument_name);
+    }
 
+    public static void input_OptionType(String option_type) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_OptionType);
+        //click(InstrumentMainPage.instrument_OptionInstruments_OptionType, "Clicking on Option Type");
+        inputText(InstrumentMainPage.instrument_OptionInstruments_OptionType, option_type, "Option Type Selected=" + option_type);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_OptionType_Options, option_type)));
+        click(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_OptionType_Options, option_type)), "Option Type selected");
+    }
+    public static void input_Strike(String strike) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_Strike);
+        inputText(InstrumentMainPage.instrument_OptionInstruments_Strike, strike, "Strike Name is=" + strike);
+    }
 
+    public static void input_StrikeType(String strike_type) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_StrikeType);
+        //click(InstrumentMainPage.instrument_OptionInstruments_StrikeType, "Clicking on Strike Type");
+        inputText(InstrumentMainPage.instrument_OptionInstruments_StrikeType, strike_type, "Strike Type Selected=" + strike_type);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_StrikeType_Options, strike_type)));
+        click(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_StrikeType_Options, strike_type)), "Option Type selected");
+    }
 
+    public static void input_Notional(String notional) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_Notional);
+        inputText(InstrumentMainPage.instrument_OptionInstruments_Notional, notional, "Instrument Name is=" + notional);
+
+    }
+    public static void input_NotionalType(String notional_type) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_NotionalType);
+        //click(InstrumentMainPage.instrument_OptionInstruments_NotionalType, "Clicking on Notional Type");
+        inputText(InstrumentMainPage.instrument_OptionInstruments_NotionalType, notional_type, "Notional Type Selected=" + notional_type);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_NotionalType_Options, notional_type)));
+        click(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_NotionalType_Options, notional_type)), "Option Type selected");
+    }
+
+    public static void input_Expirydate(String expiry) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_Expiry);
+        hoverOnElementandClick(InstrumentMainPage.instrument_OptionInstruments_Expiry);
+        inputText(InstrumentMainPage.instrument_OptionInstruments_Expiry, expiry,"Enter Start date in search Manual Prices tab");
+        pressEnter(InstrumentMainPage.instrument_OptionInstruments_Expiry);
+    }
+    public static void input_ExpiryHour(String expiry_hour_utc) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_Expiryhour);
+        inputText(InstrumentMainPage.instrument_OptionInstruments_Expiryhour, expiry_hour_utc, "Expiry Hour is=" + expiry_hour_utc);
+
+    }
+    public static void input_Symbol(String symbol) throws InterruptedException {
+        clearInputUsingKeys(InstrumentMainPage.instrument_OptionInstruments_Symbol);
+        //click(InstrumentMainPage.instrument_OptionInstruments_Symbol, "Clicking on Symbol Type");
+        inputText(InstrumentMainPage.instrument_OptionInstruments_Symbol, symbol, "Symbol Type Selected=" + symbol);
+        waitForVisible(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_Symbol_Options, symbol)));
+        click(By.xpath(String.format(InstrumentMainPage.instrument_OptionInstruments_Symbol_Options, symbol)), "Option Type selected");
+    }
 }
