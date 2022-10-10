@@ -138,7 +138,8 @@ public class XAlphaDealInputActions extends KeywordUtil {
         return dealInput_QuoteAssetAmount;
     }
 
-    public static void dealInput_FeeAsset(String FeeAsset) {
+    public static void dealInput_FeeAsset(String FeeAsset) throws InterruptedException {
+        delay(3000);
         inputText(XAlphaDealInputPage.dealInput_FeeAsset, FeeAsset, "Select deal input Fee Asset=" + FeeAsset);
         waitForPresent(By.xpath(String.format(XAlphaDealInputPage.dealInput_FeeAssetOptions, FeeAsset)));
         click(By.xpath(String.format(XAlphaDealInputPage.dealInput_FeeAssetOptions, FeeAsset)), "Choose FeeAsset from drop down options");
@@ -231,28 +232,32 @@ public class XAlphaDealInputActions extends KeywordUtil {
     }
 
     //execution deal > start asset
-    public static void dealInput_StartAsset(String StartAsset) {
+    public static void dealInput_StartAsset(String StartAsset) throws InterruptedException {
+        delay(3000);
         inputText(XAlphaDealInputPage.dealInput_StartAsset, StartAsset, "Select deal input StartAsset=" + StartAsset);
         waitForPresent(By.xpath(String.format(XAlphaDealInputPage.dealInput_StartAssetOptions, StartAsset)));
         click(By.xpath(String.format(XAlphaDealInputPage.dealInput_StartAssetOptions, StartAsset)), "Choose StartAsset from dropdown options");
     }
 
     //execution deal > StartAssetAmount
-    public static void dealInput_StartAssetAmount(String StartAssetAmount) {
+    public static void dealInput_StartAssetAmount(String StartAssetAmount) throws InterruptedException {
         clearInputValue(XAlphaDealInputPage.dealInput_StartAssetAmount);
+        delay(2000);
         inputText(XAlphaDealInputPage.dealInput_StartAssetAmount, StartAssetAmount, "Deal input StartAssetAmount=" + StartAssetAmount);
     }
 
     //execution deal > end asset
-    public static void dealInput_EndAsset(String EndAsset) {
+    public static void dealInput_EndAsset(String EndAsset) throws InterruptedException {
+        delay(3000);
         inputText(XAlphaDealInputPage.dealInput_EndAsset, EndAsset, "Select deal input EndAsset=" + EndAsset);
         waitForPresent(By.xpath(String.format(XAlphaDealInputPage.dealInput_EndAssetOptions, EndAsset)));
         click(By.xpath(String.format(XAlphaDealInputPage.dealInput_EndAssetOptions, EndAsset)), "Choose EndAsset from dropdown options");
     }
 
     //execution deal > EndAssetAmount
-    public static void dealInput_EndAssetAmount(String EndAssetAmount) {
+    public static void dealInput_EndAssetAmount(String EndAssetAmount) throws InterruptedException {
         clearInputValue(XAlphaDealInputPage.dealInput_EndAssetAmount);
+        delay(3000);
         inputText(XAlphaDealInputPage.dealInput_EndAssetAmount, EndAssetAmount, "Deal input EndAssetAmount=" + EndAssetAmount);
     }
 
@@ -266,8 +271,9 @@ public class XAlphaDealInputActions extends KeywordUtil {
     }
 
     //execution deal > FeeAdjustment
-    public static void dealInput_FeeAdjustment(String FeeAdjustment) {
+    public static void dealInput_FeeAdjustment(String FeeAdjustment) throws InterruptedException {
         clearInputValue(XAlphaDealInputPage.dealInput_FeeAdjustment);
+        delay(3000);
         inputText(XAlphaDealInputPage.dealInput_FeeAdjustment, FeeAdjustment, "Deal input FeeAdjustment=" + FeeAdjustment);
     }
 
