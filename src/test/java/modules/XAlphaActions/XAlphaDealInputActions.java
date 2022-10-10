@@ -2,6 +2,7 @@ package modules.XAlphaActions;
 
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.By;
+import pageFactory.NitroXPages.NitroXHomePage;
 import pageFactory.XAlphaPages.XAlphaDealEnquiryPage;
 import pageFactory.XAlphaPages.XAlphaDealInputPage;
 import step_definitions.RunCukesTest;
@@ -241,8 +242,9 @@ public class XAlphaDealInputActions extends KeywordUtil {
 
     //execution deal > StartAssetAmount
     public static void dealInput_StartAssetAmount(String StartAssetAmount) throws InterruptedException {
-        clearInputValue(XAlphaDealInputPage.dealInput_StartAssetAmount);
+        clearInputUsingKeys(XAlphaDealInputPage.dealInput_StartAssetAmount);
         delay(2000);
+
         inputText(XAlphaDealInputPage.dealInput_StartAssetAmount, StartAssetAmount, "Deal input StartAssetAmount=" + StartAssetAmount);
     }
 
@@ -255,10 +257,17 @@ public class XAlphaDealInputActions extends KeywordUtil {
     }
 
     //execution deal > EndAssetAmount
-    public static void dealInput_EndAssetAmount(String EndAssetAmount) throws InterruptedException {
-        clearInputValue(XAlphaDealInputPage.dealInput_EndAssetAmount);
+
+    public static String getEndAssetAmount() {
+        int number  = KeywordUtil.generateRandomNumber200to500()+1000;
+        LogUtil.infoLog(thisClass, "Ask price" + number);
+        return String.valueOf(number);
+
+    }
+    public static void dealInput_EndAssetAmount() throws InterruptedException {
+        clearInputUsingKeys(XAlphaDealInputPage.dealInput_EndAssetAmount);
         delay(3000);
-        inputText(XAlphaDealInputPage.dealInput_EndAssetAmount, EndAssetAmount, "Deal input EndAssetAmount=" + EndAssetAmount);
+        inputText(XAlphaDealInputPage.dealInput_EndAssetAmount, getEndAssetAmount(), "Deal input EndAssetAmount=");
     }
 
     //execution deal > FeeProportion
@@ -272,7 +281,7 @@ public class XAlphaDealInputActions extends KeywordUtil {
 
     //execution deal > FeeAdjustment
     public static void dealInput_FeeAdjustment(String FeeAdjustment) throws InterruptedException {
-        clearInputValue(XAlphaDealInputPage.dealInput_FeeAdjustment);
+        clearInputUsingKeys(XAlphaDealInputPage.dealInput_FeeAdjustment);
         delay(3000);
         inputText(XAlphaDealInputPage.dealInput_FeeAdjustment, FeeAdjustment, "Deal input FeeAdjustment=" + FeeAdjustment);
     }
@@ -319,8 +328,8 @@ public class XAlphaDealInputActions extends KeywordUtil {
     }
 
     //cash flow Amount
-    public static void dealInput_CashFlow_Amount(String Amount) {
-        clearInputValue(XAlphaDealInputPage.dealInput_CashFlow_Amount);
+    public static void dealInput_CashFlow_Amount(String Amount) throws InterruptedException {
+        clearInputUsingKeys(XAlphaDealInputPage.dealInput_CashFlow_Amount);
         inputText(XAlphaDealInputPage.dealInput_CashFlow_Amount, Amount, "Deal input CashFlow Amount=" + Amount);
     }
 
