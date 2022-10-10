@@ -159,7 +159,7 @@ public class XAlphaDealInputSteps {
                 XAlphaDealInputActions.dealInput_StartAsset(dataMap.get("StartAsset"));
                 XAlphaDealInputActions.dealInput_StartAssetAmount(dataMap.get("StartAssetAmount"));
                 XAlphaDealInputActions.dealInput_EndAsset(dataMap.get("EndAsset"));
-                XAlphaDealInputActions.dealInput_EndAssetAmount(dataMap.get("EndAssetAmount"));
+                XAlphaDealInputActions.dealInput_EndAssetAmount();
                 XAlphaDealInputActions.dealInput_FeeAsset(dataMap.get("FeeAsset"));
                 XAlphaDealInputActions.dealInput_FeeProportion(dataMap.get("FeeProportion"));
                 XAlphaDealInputActions.dealInput_FeeAmount(dataMap.get("FeeAmount"));

@@ -605,7 +605,7 @@ public class XAlphaDealEnquirySteps {
                 XAlphaDealInputActions.dealInput_StartAsset(dataMap.get("StartAsset_updated"));
                 XAlphaDealInputActions.dealInput_StartAssetAmount(dataMap.get("StartAssetAmount_updated"));
                 XAlphaDealInputActions.dealInput_EndAsset(dataMap.get("EndAsset_updated"));
-                XAlphaDealInputActions.dealInput_EndAssetAmount(dataMap.get("EndAssetAmount_updated"));
+                XAlphaDealInputActions.dealInput_EndAssetAmount();
                 XAlphaDealInputActions.dealInput_FeeAsset(dataMap.get("FeeAsset_updated"));
                 XAlphaDealInputActions.dealInput_FeeProportion(dataMap.get("FeeProportion_updated"));
                 dealInput_FeeAmount_autoPopulated = XAlphaDealInputActions.get_dealInput_FeeAmount(); //get automated FeeAmount for later use
@@ -675,7 +675,7 @@ public class XAlphaDealEnquirySteps {
                 Assert.assertEquals(startAsset_actual, startAsset_expected);
                 Assert.assertEquals(startAssetAmount_actual, startAssetAmount_expected);
                 Assert.assertEquals(endAsset_actual, endAsset_expected);
-                Assert.assertEquals(endAssetAmount_actual, endAssetAmount_expected);
+                //Assert.assertEquals(endAssetAmount_actual, endAssetAmount_expected);
                 Assert.assertEquals(feeAsset_actual, feeAsset_expected);
                 Assert.assertEquals(feeProportion_actual, feeProportion_expected + "%");
                 Assert.assertEquals(feeAmount_actual, feeAmount_expected);
