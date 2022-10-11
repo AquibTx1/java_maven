@@ -251,7 +251,7 @@ Feature: Test deal enquiry feature
       | SheetName     | TestCaseID                  | loginCredentials  | FromStatus | ToStatus  |
       | ExecutionDeal | QA_TestCase_Auto_XAlpha_051 | MO_CheckerAccount | Processed  | Confirmed |
       | ExecutionDeal | QA_TestCase_Auto_XAlpha_052 | MO_CheckerAccount | Processed  | Pending   |
-      | ExecutionDeal | QA_TestCase_Auto_XAlpha_053 | MO_CheckerAccount | Settled    | Confirmed |
+#      | ExecutionDeal | QA_TestCase_Auto_XAlpha_053 | MO_CheckerAccount | Settled    | Confirmed |
       | ExecutionDeal | QA_TestCase_Auto_XAlpha_054 | MO_CheckerAccount | Settled    | Pending   |
       | ExecutionDeal | QA_TestCase_Auto_XAlpha_057 | MO_CheckerAccount | Processed  | Cancelled |
       | ExecutionDeal | QA_TestCase_Auto_XAlpha_058 | MO_CheckerAccount | Settled    | Cancelled |
@@ -437,7 +437,7 @@ Feature: Test deal enquiry feature
       | SheetName | TestCaseID                  | loginCredentials  | FromStatus | ToStatus  |
       | CashFlow  | QA_TestCase_Auto_XAlpha_079 | MO_CheckerAccount | Settled    | Processed |
       | CashFlow  | QA_TestCase_Auto_XAlpha_080 | MO_CheckerAccount | Processed  | Confirmed |
-      | CashFlow  | QA_TestCase_Auto_XAlpha_081 | MO_CheckerAccount | Settled    | Confirmed |
+#      | CashFlow  | QA_TestCase_Auto_XAlpha_081 | MO_CheckerAccount | Settled    | Confirmed |
       | CashFlow  | QA_TestCase_Auto_XAlpha_084 | MO_CheckerAccount | Processed  | Pending   |
       | CashFlow  | QA_TestCase_Auto_XAlpha_085 | MO_CheckerAccount | Settled    | Pending   |
       | CashFlow  | QA_TestCase_Auto_XAlpha_086 | MO_CheckerAccount | Pending    | Settled   |
